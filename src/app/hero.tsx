@@ -8,6 +8,7 @@ function Hero() {
       <div className="absolute inset-0 h-full w-full bg-gray-900/60" />
       <div className="grid min-h-screen px-8">
         <div className="container relative z-10 my-auto mx-auto">
+          {/* @ts-ignore */}
           <Typography
             variant="h1"
             color="white"
@@ -15,6 +16,7 @@ function Hero() {
           >
             CARTENZ SATSET INDONESIA GASPOL
           </Typography>
+          {/* @ts-ignore */}
           <Typography
             variant="lead"
             color="white"
