@@ -1,12 +1,18 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import { Roboto, Montserrat } from "next/font/google";
 import { Layout, FixedPlugin } from "@/components";
 
 const roboto = Roboto({
   subsets: ["latin"],
   weight: ["300", "400", "500", "700", "900"],
   display: "swap",
+  variable: "--font-roboto",
+});
+const moserrat = Montserrat({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-monserrat",
 });
 
 export const metadata: Metadata = {
@@ -21,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${roboto.variable} ${moserrat.variable}`}>
       <head>
         <script
           defer
@@ -30,7 +36,7 @@ export default function RootLayout({
         ></script>
         <link rel="shortcut icon" href="/favicon.png" type="image/png" />
       </head>
-      <body className={roboto.className}>
+      <body>
         <Layout>
           {children}
           {/* <FixedPlugin /> */}

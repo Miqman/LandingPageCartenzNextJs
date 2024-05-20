@@ -11,14 +11,14 @@ function Hero() {
           <Typography
             variant="h1"
             color="white"
-            className="font-black text-7xl leading-[5.488rem] md:max-w-full lg:max-w-4xl"
+            className="font-black text-3xl md:text-7xl lg:text-7xl leading-[3rem] md:leading-[5.488rem] lg:leading-[5.488rem] md:max-w-full lg:max-w-4xl"
           >
             CARTENZ SATSET INDONESIA GASPOL
           </Typography>
           <Typography
             variant="lead"
             color="white"
-            className="mt-6 mb-10 w-full text-2xl leading-9 md:max-w-full lg:max-w-3xl"
+            className="mt-6 mb-10 w-full text-lg leading-7 lg:text-2xl  lg:leading-9 md:max-w-full lg:max-w-4xl"
           >
             Mendorong Pertumbuhan Ekonomi Daerah Indonesia melalui kemitraan
             dengan Pemerintah Daerah untuk meningkatkan Pendapatan,

@@ -1,8 +1,8 @@
 {
-  "name": "nextjs-tailwind-course-details-page",
+  "name": "cartenz-profile",
   "version": "1.0.0",
   "private": true,
-  "author": "Creative Tim",
+  "author": "Cartenz Tim",
   "license": "See license in https://www.creative-tim.com/license",
   "homepage": "https://demos.creative-tim.com/nextjs-tailwind-course-details-page",
   "scripts": {
@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@heroicons/react": "2.0.18",
-    "@material-tailwind/react": "2.1.2",
+    "@material-tailwind/react": "2.1.9",
     "next": "13.4.0",
     "react": "18",
     "react-dom": "18"

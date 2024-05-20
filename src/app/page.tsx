@@ -5,6 +5,7 @@ import { Navbar, Footer } from "@/components";
 import Hero from "./hero";
 import OnlineCourse from "./online-course";
 import Highlight from "./highlight";
+import Highlight2 from "./highlight2";
 import WhyChooseUs from "./why-choose-us";
 import CarouselFeatures from "./carousel-features";
 import Pricing from "./pricing";
@@ -16,10 +17,11 @@ export default function Campaign() {
       <Navbar />
       <Hero />
       <Highlight />
-      <WhyChooseUs />
+      <Highlight2 />
+      {/* <WhyChooseUs />
       <CarouselFeatures />
       <Pricing />
-      <OtherCourses />
+      <OtherCourses /> */}
       <Footer />
     </>
   );
