@@ -25,6 +25,7 @@ export function Footer() {
         <div className="grid grid-cols-1 lg:grid-cols-3 !w-full lg:mt-10 gap-x-10">
           <div className="col mb-5">
             <img src="/image/logo-footer-cartenz.svg" alt="" />
+            {/* @ts-ignore */}
             <Typography className="font-normal mb-4 mt-8 text-base">
               Millennium Centennial Center, Lantai 51 Jl. Jenderal Sudirman
               No.Kav. 25, Kuningan, Karet, Kecamatan Setiabudi, Kota Jakarta
