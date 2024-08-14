@@ -15,7 +15,7 @@ export function Highlight() {
   return (
     <section className="py-[70px] px-8">
       {/* <div className="bg-blue-300 min-h-[calc(100vh-15rem)] w-full"></div> */}
-      <div className="container mx-auto grid grid-cols-1 lg:grid-cols-4 gap-10">
+      <div className="container mx-auto grid grid-cols-1 lg:grid-cols-4 gap-10 relative">
         <div className="hidden lg:col-span-1 lg:flex mb-12">
           {/* <div className="rounded-bl-[32px] h-[622px] w-[296px] bg-blue-200"> */}
           <img
@@ -28,7 +28,7 @@ export function Highlight() {
           {/* </div> */}
         </div>
         <div className="col-span-2 p-5 lg:p-10">
-          <div className="flex gap-4 mb-10 lg:mb-20">
+          <div className="flex gap-4 mb-10 lg:mb-20 max-w-[500px]">
             <div className="font-bold text-[32px] text-[#0199CB] leading-10 px-2">
               1.
             </div>
@@ -62,7 +62,7 @@ export function Highlight() {
                 variant="h2"
                 className="mb-4 font-bold text-[32px] text-[#0199CB] leading-10"
               >
-                Peningkatan Kualitas .2 Kesejahteraan Daerah
+                Peningkatan Kualitas 2. Kesejahteraan Daerah
               </Typography>
               {/* @ts-ignore */}
               <Typography
@@ -92,6 +92,19 @@ export function Highlight() {
             src="/image/2.png"
             className="h-[622px] w-[296px] rounded-tl-[32px]"
             alt="highlight2"
+          />
+        </div>
+
+        <div>
+          <img
+            src="/image/diagonalArrow.png"
+            className="max-w-[260px] absolute top-0 left-[50%] translate-x-[-15%] translate-y-[35%]"
+            alt="diagonalArrow1"
+          />
+          <img
+            src="/image/diagonalArrow.png"
+            className="max-w-[260px] rotate-[180deg] absolute top-[105px] left-[50%] translate-x-[-90%] translate-y-[40%]"
+            alt="diagonalArrow2"
           />
         </div>
       </div>

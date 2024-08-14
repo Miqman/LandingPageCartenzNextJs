@@ -89,15 +89,14 @@ function BoxHighlight2({
 
 export function Highlight2() {
   return (
-    <section className="">
-      <div className="container mx-auto">
+    <section className="relative overflow-hidden">
+      <div className="container mx-auto ">
         <h2 className="font-bold text-[20px] px-8 leading-6 lg:px-0 lg:text-[32px] lg:leading-10 mb-5">
           Cartenz dalam angka
         </h2>
       </div>
       <div className="bg-[#F0F6FF]">
         <div className="container flex md:justify-between lg:justify-between gap-20 py-10 justify-center mx-auto flex-wrap">
-          {/* <div className="container grid grid-cols-3 lg:grid-cols-7 items-center py-10 px-4 gap-10 mx-auto"> */}
           <div className="">
             <img src="/image/logos/1Daerah.svg" alt="1daerah" />
           </div>
@@ -123,28 +122,11 @@ export function Highlight2() {
       </div>
 
       <div className="container mx-auto mt-10 lg:mt-20 relative">
-        {/* <div className="col-span-2 grid grid-cols-1 gap-10 sm:grid-cols-3 "> */}
         <div className="flex gap-24 justify-center lg:justify-between md:justify-between md:gap-0 lg:gap-0 flex-wrap">
           {FEATURES.map(({ title, description }) => (
             <BoxHighlight key={title} title={title} description={description} />
           ))}
         </div>
-        {/* <div className="relative max-w-[14.125rem]">
-          <div className="absolute right-0 top-0">
-            <img
-              src="/image/arrow-yellow-right-up.svg"
-              alt="icon-arrow-yellow"
-            />
-          </div>
-          <div>
-            <h3 className="text-[#0199CB] text-[3rem] font-semibold leading-[3.657rem]">
-              XXX++
-            </h3>
-            <p className="text-[24px] leading-7">
-              Satuan Kerja Perangkat Daerah
-            </p>
-          </div>
-        </div> */}
 
         <div className="lg:w-3/5 md:w-3/5 mt-20">
           <div className="flex gap-20 justify-center lg:justify-between md:justify-between md:gap-0 lg:gap-0 flex-wrap">
@@ -155,6 +137,23 @@ export function Highlight2() {
                 description={description}
               />
             ))}
+          </div>
+        </div>
+
+        {/* Bintang Besar */}
+        <div className="absolute top-[50px] right-[-130px]">
+          <div className="relative">
+            <img
+              src="/image/bintang.png"
+              alt="Bintang Besar"
+              className="w-[200px] lg:w-[592px] rotate-[15deg]" // Ukuran bintang disesuaikan
+            />
+            <div className="absolute inset-0 flex flex-col items-center justify-center z-10">
+              <h4 className="text-[#000] text-[3rem] font-semibold">4.5</h4>
+              <p className="text-[#000] text-[1.5rem] leading-[2rem]">
+                Kepuasan Pelanggan
+              </p>
+            </div>
           </div>
         </div>
 
