@@ -1,5 +1,5 @@
 // components
-import { Navbar, Footer } from "@/components";
+// import { Navbar, Footer } from "@/components";
 
 // sections
 import Hero from "./hero";
@@ -14,7 +14,7 @@ import Highlight2 from "./highlight2";
 export default function Campaign() {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <Hero />
       <Highlight />
       <Highlight2 />
@@ -22,7 +22,7 @@ export default function Campaign() {
       <CarouselFeatures />
       <Pricing />
       <OtherCourses /> */}
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

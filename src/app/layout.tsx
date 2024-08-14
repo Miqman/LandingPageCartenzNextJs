@@ -1,7 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Roboto, Montserrat } from "next/font/google";
-import { Layout, FixedPlugin } from "@/components";
+import { Layout, FixedPlugin, Navbar, Footer } from "@/components";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -38,8 +38,9 @@ export default function RootLayout({
       </head>
       <body>
         <Layout>
+          <Navbar />
           {children}
-          {/* <FixedPlugin /> */}
+          <Footer />
         </Layout>
         <link
           rel="stylesheet"
