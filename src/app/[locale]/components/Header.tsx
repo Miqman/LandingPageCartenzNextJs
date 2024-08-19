@@ -2,8 +2,6 @@
 import { Link } from '@/src/navigation'
 import { useTranslations } from 'next-intl'
 import { FC } from 'react'
-import GithubIcon from '../../icons/github'
-import LogoIcon from '../../icons/logo'
 import LangSwitcher from './LangSwitcher'
 import ThemeSwitch from './ThemeSwitch'
 import { usePathname } from 'next/navigation'
@@ -15,7 +13,13 @@ interface Props {
 }
 interface NavItemProps {
   children: React.ReactNode
-  href?: string
+  href:
+    | '/'
+    | '/about'
+    | '/hubungi-kami'
+    | '/informasi'
+    | '/produk'
+    | '/tentang-kami'
   isActive: boolean
   isScrolling: boolean
   locale?: string
@@ -39,7 +43,7 @@ function NavItem({
   return (
     <li>
       <Link
-        href={href || '#'}
+        href={href}
         className={`cursor-pointer font-medium ${
           isActive ? `rounded-sm border-b-4 ${borderColor}` : ''
         }`}
