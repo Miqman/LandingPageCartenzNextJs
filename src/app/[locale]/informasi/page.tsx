@@ -5,7 +5,7 @@ import Button from '../components/Button'
 export default function Informasi() {
   const t = useTranslations('')
   return (
-    <div className='mt-[78px]'>
+    <div className='mt-[100px]'>
       <section className='container py-8'>
         <h1 className='mb-10 text-3xl font-bold'>Sosial Media</h1>
         <div className='flex items-center justify-between text-[24px]'>

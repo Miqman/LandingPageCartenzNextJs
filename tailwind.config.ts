@@ -31,6 +31,7 @@ const config = {
         'text-secondary': 'var(--text-secondary)',
         'background-secondary': 'var(--background-secondary)',
         secondary: 'var(--secondary)',
+        tertiary: 'var(--background-tertiary)',
         button: 'var(--button)',
         selected: 'var(--selected)',
         dropdown: 'var(--dropdown)',

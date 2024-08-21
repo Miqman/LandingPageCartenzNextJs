@@ -86,7 +86,7 @@ export function Highlight2() {
           Cartenz dalam angka
         </h2>
       </div>
-      <div className='bg-[#F0F6FF]'>
+      <div className='bg-tertiary'>
         <div className='container mx-auto flex flex-wrap justify-center gap-20 py-10 md:justify-between lg:justify-between'>
           <div className=''>
             <img src='/image/logos/1Daerah.svg' alt='1daerah' />

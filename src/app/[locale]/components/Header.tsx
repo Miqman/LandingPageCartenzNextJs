@@ -38,14 +38,14 @@ function NavItem({
   const borderColor = isHomePage
     ? isScrolling
       ? 'border-yellow-500'
-      : 'border-blue-400'
+      : 'border-secondary'
     : 'border-yellow-500'
   return (
     <li>
       <Link
         href={href}
         className={`cursor-pointer font-medium ${
-          isActive ? `rounded-sm border-b-4 ${borderColor}` : ''
+          isActive ? `rounded-sm border-b-4 py-2 ${borderColor}` : ''
         }`}
       >
         {children}
@@ -86,9 +86,9 @@ export const Header: FC<Props> = ({ locale }) => {
   }, [])
   return (
     <div
-      className={`fixed top-0 z-50 mx-auto w-full border-0 ${isHomePage && isScrolling ? 'bg-blue-400' : isHomePage ? 'bg-black bg-opacity-25' : 'bg-blue-400'}`}
+      className={`fixed top-0 z-50 mx-auto h-[100px] w-full border-0 ${isHomePage && isScrolling ? 'bg-secondary' : isHomePage ? 'bg-black bg-opacity-25' : 'bg-secondary'}`}
     >
-      <div className='container flex items-center justify-between p-5 text-white'>
+      <div className='container flex h-full items-center justify-between p-5 text-white'>
         <Link lang={locale} href='/'>
           {isHomePage && isScrolling ? (
             <Image
