@@ -9,6 +9,7 @@
     --background: #fff;
     --background-secondary: #ededed;
     --background-tertiary: #f0f6ff;
+    --card-primary: #fff;
     --button: #097fa5;
     --button-text: #fff;
     --text-secondary: #3c3c3c;
@@ -22,10 +23,11 @@
   }
   .dark {
     --primary: #d6deff;
-    --secondary: #0ba6d1;
+    --secondary: #000000;
     --background: #121212;
     --background-secondary: #1b1b1b;
     --background-tertiary: #222222;
+    --card-primary: #0199cb;
     --button: #097fa5;
     --button-text: #fff;
     --text-secondary: #bbbbbb;
@@ -187,4 +189,22 @@
 .custom-carousel-dots .react-multi-carousel-dot--active button {
   background-color: #ffd700; /* Warna saat aktif */
   border-color: #ffd700;
+}
+
+.misikami p {
+  position: relative;
+}
+.misikami p span {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  background-color: #f2c94c;
+  border-radius: 99px;
+  z-index: -1;
+  top: -5px;
+  left: -10px;
+}
+#perkenalan,
+#expert {
+  scroll-margin-top: 100px; /* Adjust based on your navbar height */
 }

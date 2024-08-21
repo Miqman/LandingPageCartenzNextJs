@@ -38,7 +38,7 @@ function NavItem({
   const borderColor = isHomePage
     ? isScrolling
       ? 'border-yellow-500'
-      : 'border-secondary'
+      : 'border-[#0199cb]'
     : 'border-yellow-500'
   return (
     <li>
@@ -88,7 +88,7 @@ export const Header: FC<Props> = ({ locale }) => {
     <div
       className={`fixed top-0 z-50 mx-auto h-[100px] w-full border-0 ${isHomePage && isScrolling ? 'bg-secondary' : isHomePage ? 'bg-black bg-opacity-25' : 'bg-secondary'}`}
     >
-      <div className='container flex h-full items-center justify-between p-5 text-white'>
+      <div className='container flex h-full items-center justify-between py-5 text-white'>
         <Link lang={locale} href='/'>
           {isHomePage && isScrolling ? (
             <Image

@@ -32,6 +32,7 @@ const config = {
         'background-secondary': 'var(--background-secondary)',
         secondary: 'var(--secondary)',
         tertiary: 'var(--background-tertiary)',
+        'card-primary': 'var(--card-primary)',
         button: 'var(--button)',
         selected: 'var(--selected)',
         dropdown: 'var(--dropdown)',

@@ -86,7 +86,7 @@ export function Footer() {
                   <li key={link}>
                     <a
                       href='#'
-                      className='py-1 font-normal !text-gray-700 transition-colors hover:!text-gray-900'
+                      className='py-1 font-normal transition-colors hover:!text-gray-900'
                     >
                       {link}
                     </a>
@@ -96,7 +96,7 @@ export function Footer() {
             ))}
           </div>
         </div>
-        <div className='mt-16 font-normal !text-gray-700 md:text-center'>
+        <div className='mt-16 font-normal md:text-center'>
           &copy; © Copyright 2024 PT Cartenz Technology Indonesia All rights
           reserved.
         </div>
