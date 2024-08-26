@@ -41,7 +41,8 @@ const config = {
       },
 
       fontFamily: {
-        sans: ['var(--roboto)', 'var(--montserrat)']
+        sans: ['var(--roboto)', 'var(--montserrat)'],
+        nunito: ['Nunito', 'sans-serif']
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',

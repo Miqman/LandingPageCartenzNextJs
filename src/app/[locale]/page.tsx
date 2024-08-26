@@ -3,6 +3,7 @@ import Button from './components/Button'
 import Hero from './hero'
 import Highlight from './highlight'
 import Highlight2 from './highlight2'
+import { KisahSukses } from './KisahSukses'
 
 export default function DashboardPage() {
   const t = useTranslations('')
@@ -78,6 +79,9 @@ export default function DashboardPage() {
       </section>
       <section>
         <Highlight2 />
+      </section>
+      <section>
+        <KisahSukses />
       </section>
     </div>
   )

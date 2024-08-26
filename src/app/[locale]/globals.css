@@ -208,3 +208,17 @@
 #expert {
   scroll-margin-top: 100px; /* Adjust based on your navbar height */
 }
+
+.containerCustom {
+  width: 100%;
+  margin-left: auto;
+  margin-right: 0px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+@media (min-width: 1440px) {
+  .containerCustom {
+    max-width: 1440px;
+  }
+}
