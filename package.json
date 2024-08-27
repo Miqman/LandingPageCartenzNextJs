@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "predev": "rm -fr .next",
+    "predev": "rmdir /s /q .next || del /s /q .next",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
