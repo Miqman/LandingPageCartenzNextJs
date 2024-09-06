@@ -6,7 +6,7 @@ import {
   NextIntlClientProvider,
   useMessages
 } from 'next-intl'
-import { Roboto, Montserrat } from 'next/font/google'
+import { Roboto, Montserrat, Poppins } from 'next/font/google'
 import NextTopLoader from 'nextjs-toploader'
 import { Header } from './components/Header'
 import './globals.css'
@@ -22,6 +22,13 @@ const montserrat = Montserrat({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-montserrat'
+})
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '700', '900'],
+  display: 'swap',
+  variable: '--font-poppins'
 })
 
 export const metadata: Metadata = {
@@ -41,7 +48,7 @@ export default function RootLayout({
     <html
       lang={locale}
       dir={locale === 'ar' || locale == 'fa' ? 'rtl' : 'ltr'}
-      className={`${roboto.variable} ${montserrat.variable} scroll-smooth`}
+      className={`${roboto.variable} ${montserrat.variable} ${poppins.variable} scroll-smooth`}
       suppressHydrationWarning
     >
       <Head>

@@ -4,7 +4,7 @@ import 'react-multi-carousel/lib/styles.css'
 export function KisahSukses() {
   return (
     <div className='rounded-t-[40px] bg-tertiary py-8'>
-      <div className='container flex items-center justify-between text-3xl font-bold'>
+      <div className='container flex items-center justify-between text-lg font-bold lg:text-3xl'>
         <h1 className=''>Kisah sukses kami</h1>
         <p className='text-[#0199CB]'>Lebih Banyak</p>
       </div>
@@ -51,7 +51,7 @@ export function KisahSukses() {
                 min: 768
               },
               items: 1,
-              partialVisibilityGutter: 100
+              partialVisibilityGutter: 300
             },
             mobile: {
               breakpoint: {
@@ -59,7 +59,7 @@ export function KisahSukses() {
                 min: 0
               },
               items: 1,
-              partialVisibilityGutter: 100
+              partialVisibilityGutter: 30
             }
           }}
           rewind={false}
@@ -73,7 +73,7 @@ export function KisahSukses() {
         >
           {[...new Array(5)].map((_, i) => (
             <div
-              className='mb-6 flex h-auto w-full flex-col overflow-hidden rounded-3xl bg-white lg:h-[506px] lg:w-[974px] lg:flex-row'
+              className='mx-auto mb-6 flex h-auto w-full max-w-[90%] flex-col overflow-hidden rounded-3xl bg-white lg:h-[506px] lg:max-w-[974px] lg:flex-row'
               key={i}
             >
               <img
@@ -82,7 +82,7 @@ export function KisahSukses() {
                 className='h-64 w-full object-cover lg:h-full lg:w-1/2'
               />
               <div className='p-4 lg:p-8'>
-                <div className='font-nunito flex flex-col gap-y-4 lg:gap-y-6'>
+                <div className='flex flex-col gap-y-4 font-nunito lg:gap-y-6'>
                   <p className='text-base text-[#737679]'>
                     BAPENDA BADUNG, BALI
                   </p>

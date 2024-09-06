@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --primary: #333366;
+    --primary: #000000;
     --secondary: #0199cb;
     --background: #fff;
     --background-secondary: #ededed;
@@ -22,7 +22,7 @@
     --span-bg: linear-gradient(to right, #4e4e9e, #097fa5, #3e87ed);
   }
   .dark {
-    --primary: #d6deff;
+    --primary: #ffffff;
     --secondary: #000000;
     --background: #121212;
     --background-secondary: #1b1b1b;
@@ -205,20 +205,12 @@
   left: -10px;
 }
 #perkenalan,
-#expert {
+#tenagaAhli,
+#direktur,
+#penghargaanPublikasi {
   scroll-margin-top: 100px; /* Adjust based on your navbar height */
 }
 
-.containerCustom {
-  width: 100%;
-  margin-left: auto;
-  margin-right: 0px;
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
-
-@media (min-width: 1440px) {
-  .containerCustom {
-    max-width: 1440px;
-  }
+.customShadow {
+  text-shadow: 10px 0px 0px rgba(9, 134, 179, 1);
 }
