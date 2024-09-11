@@ -1,25 +1,33 @@
 interface Section1Props {
-  logo: string
   textLogo: {
+    image: string
+    logo: string
     first: string
     mid: string
     end: string
   }
 }
 
-export const Section1: React.FC<Section1Props> = ({ logo, textLogo }) => (
-  <section className='rounded-tr-3xl bg-red-200'>
-    <div className='flex flex-col gap-6 md:flex-row'>
+export const Section1: React.FC<Section1Props> = ({ textLogo }) => (
+  <section className=''>
+    <div className='flex flex-col items-center gap-6 md:flex-row'>
       {/* Kolom Kiri (66%) */}
-      <div className='w-full md:w-2/3'>
-        <img src={logo} alt='logo' />
-        <p>{textLogo.first}</p>
-        <p>{textLogo.mid}</p>
+      <div className='flex w-full flex-col gap-10 text-2xl md:w-2/3'>
+        <img src={textLogo.logo} alt='logo' className='w-[320px]' />
+        <p className='text-[32px] font-bold leading-[50px]'>{textLogo.first}</p>
+        <div className='misikami'>
+          <p className='w-full'>
+            <span></span>
+            {textLogo.mid}
+          </p>
+        </div>
         <p>{textLogo.end}</p>
       </div>
 
       {/* Kolom Kanan (34%) */}
-      <div className='h-full w-full bg-blue-200 md:w-1/3'>gambar</div>
+      <div className='h-full w-full md:w-1/3'>
+        <img src={textLogo.image} alt='image1' className='rounded-tr-[64px]' />
+      </div>
     </div>
   </section>
 )

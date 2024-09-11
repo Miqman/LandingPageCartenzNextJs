@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useTranslations } from 'next-intl'
 
 // Import komponen dengan nama yang sesuai
@@ -12,10 +12,23 @@ import Konsultan from './components/konsultan'
 export default function Produk() {
   const t = useTranslations('')
   const [activeIndex, setActiveIndex] = useState<number | null>(0)
+  const [fadeIn, setFadeIn] = useState(false)
+
+  // const handleClick = (index: number) => {
+  //   setActiveIndex(index)
+  // }
 
   const handleClick = (index: number) => {
-    setActiveIndex(index)
+    setFadeIn(false) // Reset the fade-in before switching components
+    setTimeout(() => {
+      setActiveIndex(index)
+      setFadeIn(true) // Start fade-in effect for the new component
+    }, 500) // Small delay to allow fade out first
   }
+
+  useEffect(() => {
+    setFadeIn(true) // Trigger fade-in when component mounts
+  }, [activeIndex])
 
   const items = [
     {
@@ -48,23 +61,27 @@ export default function Produk() {
 
   return (
     <div className='mt-[100px]'>
-      <section className='flex items-center justify-around bg-tertiary px-32 py-10'>
+      <section className='flex flex-wrap items-center justify-center bg-tertiary px-8 py-10 md:justify-around md:px-32'>
         {items.map((item, index) => (
           <div
             key={index}
-            className={`text-center ${activeIndex === index ? '' : 'grayscale filter'} cursor-pointer`}
+            className={`mb-6 w-full transform cursor-pointer text-center transition-all duration-200 ease-in-out sm:w-1/2 md:mb-0 md:w-1/4 ${
+              activeIndex === index
+                ? 'scale-105 opacity-100'
+                : 'scale-95 opacity-50 grayscale filter'
+            }`}
             onClick={() => handleClick(index)}
           >
             {item.isHeader ? (
-              <>
+              <div>
                 <h1 className='text-4xl font-bold'>{item.text}</h1>
                 <p className='mt-4'>{item.subtext}</p>
-              </>
+              </div>
             ) : (
-              <>
-                <img src={item.src} alt={item.alt} />
+              <div className=''>
+                <img src={item.src} alt={item.alt} className='mx-auto w-1/2' />
                 <p className='mt-4'>{item.text}</p>
-              </>
+              </div>
             )}
           </div>
         ))}
@@ -72,7 +89,12 @@ export default function Produk() {
 
       {/* Render komponen aktif */}
       {ActiveComponent && (
-        <div className='mt-10'>
+        <div
+          className={`mt-10 transform transition-opacity duration-500 ease-in-out ${
+            fadeIn ? 'opacity-100' : 'opacity-0'
+          }`}
+          key={activeIndex}
+        >
           <ActiveComponent />
         </div>
       )}

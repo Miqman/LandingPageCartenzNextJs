@@ -1,10 +1,16 @@
+import { Section1 } from './section1'
+
 export default function Citigov() {
-    return (
-      <div>
-        <h2>Citigov</h2>
-        <p>Ini adalah detail untuk produk Pelayanan Publik - Citigov.</p>
-        {/* Tambahkan konten tambahan sesuai kebutuhan */}
-      </div>
-    );
+  const textEfd = {
+    image: '/image/citigovPict1.png',
+    logo: '/image/logos/citigov-svg.svg',
+    first: 'Mendekatkan layanan pemerintah',
+    mid: 'Diluncurkan pada tahun 2021',
+    end: 'Citigov bertujuan untuk membuat proses layanan instansi pemerintah menjadi lebih efektif, efisien, praktis serta mendekatkan layanan pemerintah ke masyarakat dalam satu sistem'
   }
-  
+  return (
+    <div className='container mx-auto'>
+      <Section1 textLogo={textEfd} />
+    </div>
+  )
+}

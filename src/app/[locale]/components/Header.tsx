@@ -151,7 +151,7 @@ export const Header: FC<Props> = ({ locale }) => {
 
         <div className=''>
           <ul
-            className={`flex flex-col items-center justify-start gap-6 transition-all duration-300 ease-in-out md:flex-row md:gap-6 md:space-x-1 md:pb-0 ${
+            className={`flex flex-col items-center justify-start gap-6 transition-all duration-100 ease-in-out md:flex-row md:gap-6 md:space-x-1 md:pb-0 ${
               open
                 ? 'max-h-[500px] scale-100 opacity-100'
                 : 'max-h-0 scale-95 opacity-0'
