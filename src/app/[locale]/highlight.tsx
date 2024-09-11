@@ -1,8 +1,10 @@
 'use client'
+import { useTranslations } from 'next-intl'
 
 // import FeatureCard from "@/components/feature-card";
 
 export function Highlight() {
+  const t = useTranslations('')
   return (
     <section className='px-8 py-[70px]'>
       {/* <div className="bg-blue-300 min-h-[calc(100vh-15rem)] w-full"></div> */}
@@ -13,27 +15,24 @@ export function Highlight() {
             // width={296}
             // height={700}
             src='/image/1.jpg'
-            className='h-[622px] w-[296px] rounded-bl-[32px]'
+            className='h-[622px] w-[296px] rounded-bl-[32px] object-cover'
             alt='highlight1'
           />
           {/* </div> */}
         </div>
         <div className='col-span-2 p-5 lg:p-10'>
-          <div className='mb-10 flex max-w-[500px] gap-4 lg:mb-20'>
+          <div className='mb-10 flex max-w-[500px] gap-4 md:mt-10 lg:mb-20'>
             <div className='px-2 text-[32px] font-bold leading-10 text-[#0199CB]'>
               1.
             </div>
             <div>
               {/* @ts-ignore */}
               <h2 className='mb-4 text-[32px] font-bold leading-10 text-[#0199CB]'>
-                Optimalisasi Penerimaan Pendapatan Daerah
+                {t('titleHeroSection1')}
               </h2>
               {/* @ts-ignore */}
               <h5 className='mb-5 max-w-lg px-0 text-left text-[1rem] font-semibold leading-5 lg:px-0  '>
-                Peningkatan pendapatan optimal adalah langkah awal untuk
-                peningkatan kualitas daerah dengan cara penyediaan sistem
-                perpajakan daerah, monitoring, serta pelayanan perpajakan yang
-                semuanya terdigitalisasi dan terintegrasi
+                {t('descriptionHeroSection1')}
               </h5>
             </div>
           </div>
@@ -44,14 +43,11 @@ export function Highlight() {
             <div>
               {/* @ts-ignore */}
               <h2 className='mb-4 text-[32px] font-bold leading-10 text-[#0199CB]'>
-                Peningkatan Kualitas 2. Kesejahteraan Daerah
+                {t('titleHeroSection2')}
               </h2>
               {/* @ts-ignore */}
               <h5 className='mb-5 max-w-lg px-0 text-left text-[1rem] font-semibold leading-5 lg:px-0  '>
-                Pendapatan daerah yang meningkat mewajibkan daerah meningkatkan
-                kesejahteraan masyarakat dengan cara memberikan pelayanan dan
-                keamanan sehingga masyarakat akan semakin mendukung pemerintah
-                akibat merasakan dampak nyata pelayanan prima
+                {t('descriptionHeroSection2')}
               </h5>
             </div>
           </div>
@@ -69,7 +65,7 @@ export function Highlight() {
             // width={296}
             // height={622}
             src='/image/2.png'
-            className='h-[622px] w-[296px] rounded-tl-[32px]'
+            className='h-[622px] w-[296px] rounded-tl-[32px] object-cover'
             alt='highlight2'
           />
         </div>

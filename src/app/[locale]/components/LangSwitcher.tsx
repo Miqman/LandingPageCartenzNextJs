@@ -18,8 +18,8 @@ const LangSwitcher: React.FC = () => {
 
   const [isOptionsExpanded, setIsOptionsExpanded] = useState(false)
   const options: Option[] = [
-    { country: 'Indonesia', code: 'id' },
-    { country: 'English', code: 'en' } // Native name is the same
+    { country: 'ID', code: 'id' },
+    { country: 'EN', code: 'en' } // Native name is the same
     // { country: 'Deutsch', code: 'de' },
     // { country: 'Français', code: 'fr' },
     // { country: 'Español', code: 'es' },
@@ -30,9 +30,10 @@ const LangSwitcher: React.FC = () => {
   ]
 
   return (
-    <div className='flex items-center justify-center'>
+    <div className='flex items-center'>
       <div className='relative'>
         <Button
+          variant='flat'
           className='text-destructive inline-flex w-full items-center justify-between gap-3'
           size='small'
           onClick={() => setIsOptionsExpanded(!isOptionsExpanded)}
@@ -54,6 +55,7 @@ const LangSwitcher: React.FC = () => {
                   <Link
                     key={lang.code}
                     href={`/${lang.code}/${urlSegments.join('/')}`}
+                    scroll={false}
                   >
                     <button
                       lang={lang.code}

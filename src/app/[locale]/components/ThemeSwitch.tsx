@@ -20,6 +20,7 @@ export default function ThemeSwitch() {
       <Button
         size='small'
         type='button'
+        variant='flat'
         className='text-destructive inline-flex w-fit min-w-[95px] items-center justify-between gap-3'
         id='options-menu'
         aria-expanded={isOpen}
@@ -39,6 +40,7 @@ export default function ThemeSwitch() {
       <Button
         size='small'
         type='button'
+        variant='flat'
         className='text-destructive inline-flex w-full min-w-[95px] items-center justify-between gap-3'
         id='options-menu'
         aria-expanded={isOpen}

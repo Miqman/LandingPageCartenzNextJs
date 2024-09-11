@@ -43,7 +43,7 @@ const config = {
       fontFamily: {
         sans: ['var(--roboto)', 'var(--montserrat)'],
         nunito: ['Nunito', 'sans-serif'],
-        poppins: ['Poppins', 'sans-serif']
+        poppins: ['var(--font-poppins)']
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',

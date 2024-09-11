@@ -3,7 +3,7 @@
   "Support": "Dukungan",
   "Other": "Lainnya",
   "Theme": "Tema",
-  "Language": "Bahasa",
+  "Language": "ID",
   "An": "A",
   "Booster": "Penyemangat",
   "to_Your_NextJS_Apps": "untuk aplikasi NextJS Anda",
@@ -17,5 +17,10 @@
   "A_rich_incredibly_adoptable_template_that_scales_between_a_small_showcase_website_and_a_full_size_app": "A rich, incredibly adoptable template that scales between a small showcase website and a full-size app.",
   "This_is_a_simple_about_page_just_to_show_how_you_can_use_the_internationalization_in_different_pages": "This is a simple about page just to show how you can use the internationalization in different pages",
   "Performant": "Performant",
-  "contactUs": "Hubungi Kami"
+  "contactUs": "Hubungi Kami",
+  "heroDescription": "Mendorong Pertumbuhan Ekonomi Daerah Indonesia melalui kemitraan dengan Pemerintah Daerah untuk meningkatkan Pendapatan, Produktivitas, dan Pelayanan Publik melalui Transformasi Digital yang Berkelanjutan dan Berdampak.",
+  "titleHeroSection1": "Optimalisasi Penerimaan Pendapatan Daerah",
+  "titleHeroSection2": "Peningkatan Kualitas 2. Kesejahteraan Daerah",
+  "descriptionHeroSection1": "Peningkatan pendapatan optimal adalah langkah awal untuk peningkatan kualitas daerah dengan cara penyediaan sistem perpajakan daerah, monitoring, serta pelayanan perpajakan yang semuanya terdigitalisasi dan terintegrasi",
+  "descriptionHeroSection2": "Pendapatan daerah yang meningkat mewajibkan daerah meningkatkan kesejahteraan masyarakat dengan cara memberikan pelayanan dan keamanan sehingga masyarakat akan semakin mendukung pemerintah akibat merasakan dampak nyata pelayanan prima"
 }

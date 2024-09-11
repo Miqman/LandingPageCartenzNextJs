@@ -3,7 +3,7 @@
   "Support": "Support",
   "Other": "Other",
   "Theme": "Theme",
-  "Language": "Language",
+  "Language": "EN",
   "An": "A",
   "Booster": "Booster",
   "to_Your_NextJS_Apps": "to Your NextJS Apps",
@@ -17,5 +17,10 @@
   "A_rich_incredibly_adoptable_template_that_scales_between_a_small_showcase_website_and_a_full_size_app": "A rich, incredibly adoptable template that scales between a small showcase website and a full-size app.",
   "This_is_a_simple_about_page_just_to_show_how_you_can_use_the_internationalization_in_different_pages": "This is a simple about page just to show how you can use the internationalization in different pages",
   "Performant": "Performant",
-  "contactUs": "Contact Us"
+  "contactUs": "Contact Us",
+  "heroDescription": "Driving Indonesia's Regional Economic Growth through partnerships with Local Governments to increase Revenue, Productivity, and Public Services through Sustainable and Impactful Digital Transformation.",
+  "titleHeroSection1": "Optimization of Regional Revenue Receipts",
+  "titleHeroSection2": "Quality Improvement 2. Regional Welfare",
+  "descriptionHeroSection1": "Optimizing income is the first step towards enhancing regional quality by providing a regional tax system, monitoring, and tax services that are all digitalized and integrated",
+  "descriptionHeroSection2": "Increasing regional income requires regions to improve community welfare by providing services and security so that the community will increasingly support the government because they feel the real impact of excellent service"
 }

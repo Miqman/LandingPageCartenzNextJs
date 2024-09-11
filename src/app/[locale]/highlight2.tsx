@@ -132,17 +132,22 @@ export function Highlight2() {
         </div>
 
         {/* Bintang Besar */}
-        <div className='absolute right-[-130px] top-[50px]'>
+        <div className='absolute right-[-160px] top-[50px]'>
           <div className='relative'>
             <img
               src='/image/bintang.png'
               alt='Bintang Besar'
-              className='w-[200px] rotate-[15deg] lg:w-[592px]' // Ukuran bintang disesuaikan
+              className='w-[200px] rotate-[5deg] lg:h-[690px] lg:w-[680px]' // Ukuran bintang disesuaikan
             />
-            <div className='absolute inset-0 z-10 flex flex-col items-center justify-center'>
-              <h4 className='text-[3rem] font-semibold text-[#000]'>4.5</h4>
-              <p className='text-[1.5rem] leading-[2rem] text-[#000]'>
-                Kepuasan Pelanggan
+            <div className='absolute inset-0 z-10 -mt-5 mr-5 flex flex-col items-center justify-center'>
+              <h4 className='text-8xl font-bold'>4.5</h4>
+              {/* <div>
+                <p>Kepuasan</p>
+                <p>Pelanggan</p>
+              </div> */}
+              <p className='text-center text-[1.5rem] font-semibold leading-[1.8rem]'>
+                Kepuasan <br />
+                Pelanggan
               </p>
             </div>
           </div>
