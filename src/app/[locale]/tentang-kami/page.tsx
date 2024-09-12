@@ -319,8 +319,9 @@ export default function TentangKami() {
             <Carousel
               additionalTransfrom={0}
               arrows={false}
+              autoPlay
               autoPlaySpeed={3000}
-              centerMode={false}
+              centerMode={true}
               className='container py-12'
               containerClass=''
               dotListClass='custom-carousel-dots'
@@ -366,7 +367,7 @@ export default function TentangKami() {
               shouldResetAutoplay
               showDots
               sliderClass=''
-              slidesToSlide={1}
+              slidesToSlide={2}
               swipeable
             >
               {[...new Array(10)].map((_, i) => (
@@ -389,8 +390,9 @@ export default function TentangKami() {
             <Carousel
               additionalTransfrom={0}
               arrows={false}
+              autoPlay
               autoPlaySpeed={3000}
-              centerMode={false}
+              centerMode={true}
               className='container py-12'
               containerClass=''
               dotListClass='custom-carousel-dots'
@@ -436,7 +438,7 @@ export default function TentangKami() {
               shouldResetAutoplay
               showDots
               sliderClass=''
-              slidesToSlide={1}
+              slidesToSlide={2}
               swipeable
             >
               {[...new Array(10)].map((_, i) => (
