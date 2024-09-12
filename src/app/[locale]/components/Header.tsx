@@ -68,7 +68,7 @@ export const Header: FC<Props> = ({ locale }) => {
 
   const isHomePage = pathname === '/' + locale
 
-  console.log(pathname, 'pathname')
+  // console.log(pathname, 'pathname')
 
   const handleOpen = () => setOpen(cur => !cur)
   useEffect(() => {
@@ -139,9 +139,9 @@ export const Header: FC<Props> = ({ locale }) => {
                   <path
                     d='M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12'
                     stroke='currentColor'
-                    stroke-width='1.5'
-                    stroke-linecap='round'
-                    stroke-linejoin='round'
+                    strokeWidth='1.5'
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
                   ></path>
                 </g>
               </svg>
