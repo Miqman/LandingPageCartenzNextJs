@@ -1,6 +1,6 @@
 import { ThemeProvider } from '@/src/app/[locale]/components/ThemeProvider'
 import type { Metadata } from 'next'
-import Head from 'next/head'
+// import Head from 'next/head'
 import {
   AbstractIntlMessages,
   NextIntlClientProvider,
@@ -33,7 +33,10 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: 'Landing Page Cartenz',
-  description: 'Landing Page by Cartenz'
+  description: 'Landing Page by Cartenz',
+  icons: {
+    icon: '/image/favicon.ico',
+  },
 }
 
 export default function RootLayout({
@@ -51,9 +54,9 @@ export default function RootLayout({
       className={`${roboto.variable} ${montserrat.variable} ${poppins.variable} scroll-smooth`}
       suppressHydrationWarning
     >
-      <Head>
+      {/* <Head>
         <link rel='icon' href='/image/favicon.ico' />
-      </Head>
+      </Head> */}
       <body
         style={{
           backgroundImage: "url('/image/terxtureBg.png')",

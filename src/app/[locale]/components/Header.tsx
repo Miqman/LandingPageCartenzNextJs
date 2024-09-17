@@ -7,7 +7,6 @@ import ThemeSwitch from './ThemeSwitch'
 import { usePathname } from 'next/navigation'
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
-import Button from './Button'
 
 interface Props {
   locale: string
@@ -21,9 +20,11 @@ interface NavItemProps {
     | '/produk'
     | '/tentang-kami'
     | '/karir'
+    | '/hubungan-investor'
   isActive: boolean
   isScrolling: boolean
   locale?: string
+  onClick?: () => void
 }
 
 function NavItem({
@@ -31,7 +32,8 @@ function NavItem({
   href,
   isActive,
   isScrolling,
-  locale
+  locale,
+  onClick
 }: NavItemProps) {
   const pathname = usePathname()
   const isHomePage = pathname === '/' + locale
@@ -51,6 +53,7 @@ function NavItem({
     <li>
       <Link
         href={href as any}
+        onClick={onClick}
         className={`cursor-pointer hover:rounded-sm hover:py-2 ${hoverBorderColor} font-medium hover:border-b-4 ${
           isActive ? `rounded-sm border-b-4 py-2 ${borderColor}` : ''
         }`}
@@ -103,24 +106,21 @@ export const Header: FC<Props> = ({ locale }) => {
             className='flex flex-1 items-center px-2 py-3 text-white'
           >
             {isHomePage && isScrolling ? (
-              <Image
+              <img
                 src='/image/logo_cartenz_white.png'
-                width={150}
-                height={0}
+                style={{ width: '150px', height: 'auto' }}
                 alt='logoCartenz'
               />
             ) : isHomePage ? (
-              <Image
+              <img
                 src='/image/logo_cartenz.png'
-                width={150}
-                height={0}
+                style={{ width: '150px', height: 'auto' }}
                 alt='logoCartenz'
               />
             ) : (
-              <Image
+              <img
                 src='/image/logo_cartenz_white.png'
-                width={150}
-                height={0}
+                style={{ width: '150px', height: 'auto' }}
                 alt='logoCartenz'
               />
             )}
@@ -162,6 +162,7 @@ export const Header: FC<Props> = ({ locale }) => {
               isActive={pathname === `/${locale}`}
               isScrolling={isScrolling}
               locale={locale}
+              onClick={handleOpen}
             >
               Beranda
             </NavItem>
@@ -170,6 +171,7 @@ export const Header: FC<Props> = ({ locale }) => {
               isActive={pathname === `/${locale}/tentang-kami`}
               isScrolling={isScrolling}
               locale={locale}
+              onClick={handleOpen}
             >
               Tentang Kami
             </NavItem>
@@ -178,14 +180,25 @@ export const Header: FC<Props> = ({ locale }) => {
               isActive={pathname === `/${locale}/produk`}
               isScrolling={isScrolling}
               locale={locale}
+              onClick={handleOpen}
             >
               Produk
+            </NavItem>
+            <NavItem
+              href='/hubungan-investor'
+              isActive={pathname === `/${locale}/hubungan-investor`}
+              isScrolling={isScrolling}
+              locale={locale}
+              onClick={handleOpen}
+            >
+              Hubungan Investor
             </NavItem>
             <NavItem
               href='/informasi'
               isActive={pathname === `/${locale}/informasi`}
               isScrolling={isScrolling}
               locale={locale}
+              onClick={handleOpen}
             >
               Informasi
             </NavItem>
@@ -194,6 +207,7 @@ export const Header: FC<Props> = ({ locale }) => {
               isActive={pathname === `/${locale}/karir`}
               isScrolling={isScrolling}
               locale={locale}
+              onClick={handleOpen}
             >
               Karir
             </NavItem>
@@ -202,6 +216,7 @@ export const Header: FC<Props> = ({ locale }) => {
               isActive={pathname === `/${locale}/hubungi-kami`}
               isScrolling={isScrolling}
               locale={locale}
+              onClick={handleOpen}
             >
               Hubungi Kami
             </NavItem>

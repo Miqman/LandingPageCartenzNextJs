@@ -92,7 +92,7 @@ export function Footer() {
               <Button
                 size='large'
                 type='button'
-                className='text-destructive inline-flex w-fit min-w-[95px] items-center justify-between gap-3 bg-[#0199CB]'
+                className='text-destructive inline-flex w-fit min-w-[95px] items-center justify-between gap-3 bg-secondary hover:bg-button'
                 id='contact-us'
                 onClick={() => {}}
               >
@@ -121,8 +121,7 @@ export function Footer() {
           </div>
         </div>
         <div className='mt-16 font-normal md:text-center'>
-          &copy; © Copyright 2024 PT Cartenz Technology Indonesia All rights
-          reserved.
+          © Copyright 2024 PT Cartenz Technology Indonesia All rights reserved.
         </div>
       </div>
     </footer>

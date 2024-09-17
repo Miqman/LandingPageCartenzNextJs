@@ -3,7 +3,7 @@ import { capitalize } from '@/lib/utils'
 import { useTranslations } from 'next-intl'
 import { useTheme } from 'next-themes'
 import { useEffect, useRef, useState } from 'react'
-import { FiSun } from 'react-icons/fi'
+import { FiSun, FiMoon } from 'react-icons/fi'
 import { useOnClickOutside } from 'usehooks-ts'
 import Button from './Button'
 
@@ -12,6 +12,7 @@ export default function ThemeSwitch() {
   const [mounted, setMounted] = useState(false)
   const [isOpen, setIsOpen] = useState(false) // New state to control dropdown visibility
   const { setTheme, resolvedTheme, themes, theme } = useTheme()
+
   const ref = useRef(null)
   useEffect(() => setMounted(true), [])
   useOnClickOutside(ref, () => setIsOpen(false))
@@ -21,13 +22,12 @@ export default function ThemeSwitch() {
         size='small'
         type='button'
         variant='flat'
-        className='text-destructive inline-flex w-fit min-w-[95px] items-center justify-between gap-3'
+        className='text-destructive inline-flex w-fit items-center justify-between gap-3'
         id='options-menu'
         aria-expanded={isOpen}
         onClick={() => {}}
       >
-        <span className='ml-2'>{t('Theme')}</span>
-        <FiSun />
+        {theme != 'dark' ? <FiSun /> : <FiMoon />}
       </Button>
     )
 
@@ -41,16 +41,15 @@ export default function ThemeSwitch() {
         size='small'
         type='button'
         variant='flat'
-        className='text-destructive inline-flex w-full min-w-[95px] items-center justify-between gap-3'
+        className='text-destructive inline-flex w-fit items-center justify-between gap-3'
         id='options-menu'
         aria-expanded={isOpen}
         onClick={toggleDropdown}
       >
-        <span className='ml-2'>{t('Theme')}</span>
-        <FiSun />
+        {theme != 'dark' ? <FiSun /> : <FiMoon />}
       </Button>
       {isOpen && (
-        <div className='absolute right-0 mt-2 w-full origin-top-right rounded-md bg-dropdown shadow-lg'>
+        <div className='dark:highlight-white/5 absolute right-0 top-full z-50 mt-8 w-36 overflow-hidden rounded-lg bg-white py-1 text-sm font-semibold text-slate-700 shadow-lg ring-1 ring-slate-900/10 dark:bg-slate-800 dark:text-slate-300 dark:ring-0'>
           <div
             className='py-1'
             role='menu'
