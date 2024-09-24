@@ -11,6 +11,7 @@ import NextTopLoader from 'nextjs-toploader'
 import { Header } from './components/Header'
 import './globals.css'
 import Footer from './components/Footer'
+import FloatingWhatsapp from './components/FloatingWhatsapp'
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -35,8 +36,8 @@ export const metadata: Metadata = {
   title: 'Landing Page Cartenz',
   description: 'Landing Page by Cartenz',
   icons: {
-    icon: '/image/favicon.ico',
-  },
+    icon: '/image/favicon.ico'
+  }
 }
 
 export default function RootLayout({
@@ -89,6 +90,7 @@ export default function RootLayout({
             />
             <Header locale={locale} />
             <main>{children}</main>
+            <FloatingWhatsapp />
             <Footer />
           </NextIntlClientProvider>
         </ThemeProvider>
