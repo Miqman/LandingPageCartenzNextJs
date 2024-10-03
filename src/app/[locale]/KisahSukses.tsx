@@ -12,6 +12,7 @@ export function KisahSukses() {
         <Carousel
           additionalTransfrom={0}
           arrows={false}
+          autoPlay
           autoPlaySpeed={3000}
           centerMode={false}
           className='container mx-auto py-20'

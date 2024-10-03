@@ -53,7 +53,7 @@ export default function RootLayout({
       lang={locale}
       dir={locale === 'ar' || locale == 'fa' ? 'rtl' : 'ltr'}
       className={`${roboto.variable} ${montserrat.variable} ${poppins.variable} scroll-smooth`}
-      suppressHydrationWarning
+      suppressHydrationWarning={true}
     >
       {/* <Head>
         <link rel='icon' href='/image/favicon.ico' />
