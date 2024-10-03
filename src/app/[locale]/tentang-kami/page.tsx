@@ -209,7 +209,7 @@ export default function TentangKami() {
                 {dataPerkenalan[0].text}
               </p>
             </div>
-            <div className='flex h-[300px] bg-slate-400 md:h-[611px]'>
+            <div className='flex h-[300px] justify-center bg-slate-400 md:h-[611px]'>
               <img src={dataPerkenalan[0].img} alt='cartenzFamily' />
             </div>
           </div>

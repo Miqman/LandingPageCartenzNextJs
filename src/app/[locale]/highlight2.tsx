@@ -1,43 +1,8 @@
 'use client'
 
 import React from 'react'
+import { useTranslations } from 'next-intl'
 
-const FEATURES = [
-  {
-    title: 'XXX++',
-    description: 'Satuan Kerja Perangkat Daerah'
-  },
-  {
-    title: '30+',
-    description: 'Sistem e-Government'
-  },
-  {
-    title: '350+',
-    description: 'Proyek Pemerintah Daerah'
-  },
-  {
-    title: '38+',
-    description: 'IT partner di Indonesia'
-  }
-]
-const FEATURES2 = [
-  {
-    title: 'Rp 2 T++',
-    description: 'total transaksi termonitoring perbulan'
-  },
-  {
-    title: '10 Jt++',
-    description: 'volume transaksi monitoring perbulan'
-  },
-  {
-    title: 'Rp 18 T++',
-    description: 'total transaksi PPAT setahun melalui app pelayanan publik'
-  },
-  {
-    title: 'Rp 43 T++',
-    description: 'total pelaporan SPTPD setahun melalui app pelayanan publik'
-  }
-]
 function BoxHighlight({
   title,
   description
@@ -79,11 +44,49 @@ function BoxHighlight2({
 }
 
 export function Highlight2() {
+  const t = useTranslations('')
+
+  const FEATURES = [
+    {
+      title: 'XXX++',
+      description: t('features1')
+    },
+    {
+      title: '30+',
+      description: t('features2')
+    },
+    {
+      title: '350+',
+      description: t('features3')
+    },
+    {
+      title: '38+',
+      description: t('features4')
+    }
+  ]
+  const FEATURES2 = [
+    {
+      title: 'Rp 2 T++',
+      description: t('features5')
+    },
+    {
+      title: '10 Jt++',
+      description: t('features6')
+    },
+    {
+      title: 'Rp 18 T++',
+      description: t('features7')
+    },
+    {
+      title: 'Rp 43 T++',
+      description: t('features8')
+    }
+  ]
   return (
     <section className='relative overflow-hidden'>
       <div className='container mx-auto '>
         <h2 className='mb-5 px-8 text-[20px] font-bold leading-6 lg:px-0 lg:text-[32px] lg:leading-10'>
-          Cartenz dalam angka
+          {t('cartenzDalamAngka')}
         </h2>
       </div>
       <div className='bg-tertiary'>
@@ -107,7 +110,7 @@ export function Highlight2() {
             <h3 className='text-[3rem] font-semibold leading-[3.657rem] text-[#0199CB]'>
               100++
             </h3>
-            <p className='text-[24px] leading-7'>Pemerintah Daerah</p>
+            <p className='text-[24px] leading-7'>{t('pemerintahDaerah')}</p>
           </div>
         </div>
       </div>
@@ -146,20 +149,16 @@ export function Highlight2() {
                 <p>Pelanggan</p>
               </div> */}
               <p className='text-center text-[1.5rem] font-semibold leading-[1.8rem]'>
-                Kepuasan <br />
-                Pelanggan
+                <pre>{t('kepuasanPelanggan')}</pre>
               </p>
             </div>
           </div>
         </div>
 
         <div className='mt-20 text-center md:mt-0 lg:mt-0 lg:w-3/5 lg:text-left'>
-          <p className='text-2xl font-bold lg:text-4xl'>
-            80% Klien kami memiliki pendapatan diatas rata - rata provinsi dan
-            nasional
-          </p>
+          <p className='text-2xl font-bold lg:text-4xl'>{t('klien')}</p>
           <p className='text-[#828282} text-lg lg:mt-10 lg:text-2xl'>
-            * data tahun 2023
+            {t('dataTahun')}
           </p>
         </div>
       </div>
