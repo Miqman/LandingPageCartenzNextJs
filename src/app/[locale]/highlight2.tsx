@@ -148,9 +148,10 @@ export function Highlight2() {
                 <p>Kepuasan</p>
                 <p>Pelanggan</p>
               </div> */}
-              <p className='text-center text-[1.5rem] font-semibold leading-[1.8rem]'>
-                <pre>{t('kepuasanPelanggan')}</pre>
-              </p>
+              <p
+                className='text-center text-[1.5rem] font-semibold leading-[1.8rem]'
+                dangerouslySetInnerHTML={{ __html: t('kepuasanPelanggan') }}
+              ></p>
             </div>
           </div>
         </div>
