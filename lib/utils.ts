@@ -23,3 +23,7 @@ export function convertToThumbnailUrl(url: string) {
     return url
   }
 }
+
+export function formattedTextEnter(text: string) {
+  return text.replace(/<br\s*\/?>/gi, '\n')
+}
