@@ -1,6 +1,7 @@
-// import logoEfd from '@/public/image/efd.png'
+'use client'
+
 import Button from '../../components/Button'
-import { Section1 } from './section1'
+import { Section1 } from '../components/section1'
 import { useTranslations } from 'next-intl'
 import { useProdukSmartgov } from '@/hooks/useProduk'
 import { formattedTextEnter } from '@/lib/utils'

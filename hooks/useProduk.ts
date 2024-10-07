@@ -22,3 +22,39 @@ export const useProdukSmartgov = () => {
     isError: error
   }
 }
+export const useProdukEfd = () => {
+  const fetchProdukEfd = () => fetcher(API_ROUTES.PRODUK_EFD())
+
+  const { data, error } = useSWR('produkEfd', async () => {
+    const [produk_efd] = await Promise.allSettled([fetchProdukEfd()])
+
+    return {
+      produk_efd:
+        produk_efd.status === 'fulfilled' ? produk_efd.value.data : null
+    }
+  })
+
+  return {
+    dataProdukEfd: data?.produk_efd,
+    isLoading: !error && !data,
+    isError: error
+  }
+}
+export const useProdukCitigov = () => {
+  const fetchProdukCitigov = () => fetcher(API_ROUTES.PRODUK_CITIGOV())
+
+  const { data, error } = useSWR('produkCitigov', async () => {
+    const [produk_citigov] = await Promise.allSettled([fetchProdukCitigov()])
+
+    return {
+      produk_citigov:
+        produk_citigov.status === 'fulfilled' ? produk_citigov.value.data : null
+    }
+  })
+
+  return {
+    dataProdukCitigov: data?.produk_citigov,
+    isLoading: !error && !data,
+    isError: error
+  }
+}

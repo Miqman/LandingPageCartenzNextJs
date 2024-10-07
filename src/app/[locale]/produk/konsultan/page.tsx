@@ -1,4 +1,4 @@
-import { Section1 } from './section1'
+import { Section1 } from '../components/section1'
 import Button from '../../components/Button'
 
 export default function Konsultan() {

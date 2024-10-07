@@ -11,7 +11,10 @@ export const API_ROUTES = {
   DIREKTUR: () => `${BASE_URL}/${BASE_ID}/direktur`,
   TENAGA_AHLI: () => `${BASE_URL}/${BASE_ID}/tenaga_ahli`,
   PENGHARGAAN: () => `${BASE_URL}/${BASE_ID}/penghargaan`,
-  PRODUK_SMARTGOV: () => `${BASE_URL}/${BASE_ID}/produk_smartgov`
+  PRODUK_SMARTGOV: () => `${BASE_URL}/${BASE_ID}/produk_smartgov`,
+  PRODUK_EFD: () => `${BASE_URL}/${BASE_ID}/produk_efd`,
+  PRODUK_CITIGOV: () => `${BASE_URL}/${BASE_ID}/produk_citigov`,
+  PRODUK_KONSULTAN: () => `${BASE_URL}/${BASE_ID}/produk_konsultan`
   //   POSTS: `${BASE_URL}/posts`,
   // ... tambahkan route lain sesuai kebutuhan
 }

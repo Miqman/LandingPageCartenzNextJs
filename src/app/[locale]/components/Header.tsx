@@ -81,6 +81,9 @@ export const Header: FC<Props> = ({ locale }) => {
     )
   }, [])
 
+  const isActivePage = (path: string) =>
+    pathname.startsWith(`/${locale}${path}`)
+
   useEffect(() => {
     function handleScroll() {
       if (window.scrollY > 0) {
@@ -177,7 +180,7 @@ export const Header: FC<Props> = ({ locale }) => {
             </NavItem>
             <NavItem
               href='/produk'
-              isActive={pathname === `/${locale}/produk`}
+              isActive={isActivePage('/produk')}
               isScrolling={isScrolling}
               locale={locale}
               onClick={handleOpen}
