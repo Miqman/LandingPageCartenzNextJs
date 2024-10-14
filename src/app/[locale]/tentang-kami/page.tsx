@@ -203,10 +203,10 @@ export default function TentangKami() {
           <div className='grid grid-cols-1 overflow-hidden rounded-[40px] bg-tertiary md:grid-cols-2'>
             <div className='px-8 py-10 md:px-16 md:py-20'>
               <h1 className='text-4xl font-bold md:text-6xl'>
-                {dataPerkenalan[0].judul}
+                {t(dataPerkenalan[0].judul)}
               </h1>
               <p className='mt-10 text-lg md:text-xl'>
-                {dataPerkenalan[0].text}
+                {t(dataPerkenalan[0].text)}
               </p>
             </div>
             <div className='flex h-[300px] justify-center bg-slate-400 md:h-[611px]'>
