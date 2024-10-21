@@ -25,14 +25,14 @@ export default function Smartgov() {
     end: t(dataProdukSmartgov[0].text2)
   }
   const urlLogo = [
-    '/image/logoSmartgov/jakarta.png',
-    '/image/logoSmartgov/bandung.png',
-    '/image/logoSmartgov/kabBadung.png',
-    '/image/logoSmartgov/kabTangerang.png',
-    '/image/logoSmartgov/banjarmasin.png',
-    '/image/logoSmartgov/malang.png',
-    '/image/logoSmartgov/semarang.png',
-    '/image/logoSmartgov/80+.png'
+    { logo: '/image/logoSmartgov/jakarta.png', text: 'Kota Jakarta' },
+    { logo: '/image/logoSmartgov/bandung.png', text: 'Kota Bandung' },
+    { logo: '/image/logoSmartgov/kabBadung.png', text: 'Kab Badung' },
+    { logo: '/image/logoSmartgov/kabTangerang.png', text: 'Kab Tangeranga' },
+    { logo: '/image/logoSmartgov/banjarmasin.png', text: 'Kota Banjarmasin' },
+    { logo: '/image/logoSmartgov/malang.png', text: 'Kota Malang' },
+    { logo: '/image/logoSmartgov/semarang.png', text: 'Kota Semarang' },
+    { logo: '/image/logoSmartgov/80+.png', text: 'Kabupaten Kota' }
   ]
 
   return (
@@ -50,9 +50,17 @@ export default function Smartgov() {
           </p>
         </div>
       </div>
-      <div className='my-20 flex flex-wrap items-center justify-center gap-x-48 gap-y-10'>
-        {urlLogo.map((url, index) => (
-          <img src={url} alt={url + index} key={index} />
+      <div className='my-20 grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4 md:gap-y-20 '>
+        {urlLogo.map((url, index: number) => (
+          <div
+            key={index}
+            className='flex flex-col items-center justify-center'
+          >
+            <div className='flex h-32 items-center justify-center'>
+              <img className='' src={url.logo} alt={url.logo + index} />
+            </div>
+            <p className='mt-10 text-center'>{url.text}</p>
+          </div>
         ))}
       </div>
       <div className='flex justify-center'>

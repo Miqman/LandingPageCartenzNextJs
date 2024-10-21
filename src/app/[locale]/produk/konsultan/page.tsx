@@ -1,13 +1,27 @@
+'use client'
+
 import { Section1 } from '../components/section1'
 import Button from '../../components/Button'
+import { useProdukKonsultan } from '@/hooks/useProduk'
+import { useTranslations } from 'next-intl'
 
 export default function Konsultan() {
+  const t = useTranslations('')
+  const { dataProdukKonsultan, isLoading, isError } = useProdukKonsultan()
+
+  if (isLoading) {
+    return <div>Loading...</div>
+  }
+
+  if (isError) {
+    return <div>Error</div>
+  }
   const textEfd = {
     image: '/image/consultanPict1.png',
     logo: '/image/logos/consultan-svg.svg',
     first: 'Layanan Konsultasi & Project',
-    mid: 'Cartenz mulai secara aktif mengikuti kegiatan project sebagai salah satu layanan utama pada tahun 2022.',
-    end: 'Project Consultant bertujuan untuk memberikan layanan konsultasi dan rekomendasi, khususnya di bidang teknologi informasi, kepada  seluruh tingkat instansi pemerintahan.'
+    mid: t(dataProdukKonsultan[0].text1),
+    end: t(dataProdukKonsultan[0].text2)
   }
 
   const urlLogo = [
@@ -31,7 +45,7 @@ export default function Konsultan() {
         <div className='misikami flex justify-center'>
           <p className='text-2xl leading-9'>
             <span></span>
-            Saat ini Project Consultant Cartenz telah bekerja sama dengan:
+            {t(dataProdukKonsultan[0].text3)}
           </p>
         </div>
         <div className='my-20 flex flex-wrap items-center justify-center gap-20'>
