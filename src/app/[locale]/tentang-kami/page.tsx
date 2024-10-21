@@ -143,7 +143,7 @@ export default function TentangKami() {
             }
           }}
         >
-          <p className='cursor-pointer py-2'>Perkenalan</p>
+          <p className='cursor-pointer py-2'>{t('Perkenalan')}</p>
           {(activeSection === 'perkenalan' || isHovered === 'perkenalan') && (
             <div className='absolute inset-x-0 bottom-0 h-[4px] rounded-b-lg bg-[#0199cb]'></div>
           )}
@@ -159,7 +159,7 @@ export default function TentangKami() {
             }
           }}
         >
-          <p className='cursor-pointer py-2'>Direktur</p>
+          <p className='cursor-pointer py-2'>{t('Direktur1')}</p>
           {(activeSection === 'direktur' || isHovered === 'direktur') && (
             <div className='absolute inset-x-0 bottom-0 h-[4px] rounded-b-lg bg-[#0199cb]'></div>
           )}
@@ -175,7 +175,7 @@ export default function TentangKami() {
             }
           }}
         >
-          <p className='cursor-pointer py-2'>Tenaga Ahli</p>
+          <p className='cursor-pointer py-2'>{t('TenagaAhli')}</p>
           {(activeSection === 'tenagaAhli' || isHovered === 'tenagaAhli') && (
             <div className='absolute inset-x-0 bottom-0 h-[4px] rounded-b-lg bg-[#0199cb]'></div>
           )}
@@ -191,7 +191,7 @@ export default function TentangKami() {
             }
           }}
         >
-          <p className='cursor-pointer py-2'>Penghargaan dan Publikasi</p>
+          <p className='cursor-pointer py-2'>{t('PenghargaanDanPublikasi')}</p>
           {(activeSection === 'penghargaanPublikasi' ||
             isHovered === 'penghargaanPublikasi') && (
             <div className='absolute inset-x-0 bottom-0 h-[4px] rounded-b-lg bg-[#0199cb]'></div>
@@ -217,9 +217,9 @@ export default function TentangKami() {
 
         <div className='container'>
           <div className='py-20'>
-            <p className='text-center text-3xl font-bold'>BUDAYA KAMI</p>
+            <p className='text-center text-3xl font-bold'>{t('BudayaKami')}</p>
             <h1 className='customShadow my-10 text-center font-poppins text-7xl font-bold tracking-widest text-[#0199cb] lg:text-9xl lg:leading-[192px]'>
-              PRESISI
+              {t('Presisi')}
             </h1>
             <div className='grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4'>
               {dataPresisi?.map((item: any, index: any) => (
@@ -239,12 +239,12 @@ export default function TentangKami() {
                     {/* <div className='absolute inset-0 rounded-md bg-gray-700 opacity-60'></div> */}
                     <div className='absolute inset-0 flex items-center justify-center'>
                       <h2 className='text-3xl font-bold uppercase'>
-                        {item.judul}
+                        {t(item.judul)}
                       </h2>
                     </div>
                   </div>
                   <div className='p-4 text-xl'>
-                    <p>{item.text}</p>
+                    <p>{t(item.text)}</p> 
                   </div>
                 </div>
               ))}
@@ -255,41 +255,41 @@ export default function TentangKami() {
         <div className='container relative'>
           <div className='py-20'>
             <h1 className='text-left text-3xl font-bold uppercase lg:text-center'>
-              misi kami
+              {t('MisiKami')}
             </h1>
             <div className='mt-10 flex flex-col gap-14 px-4 text-lg md:mt-20 md:px-12 md:text-xl'>
               <div className='misikami flex flex-col items-center justify-between gap-8 md:flex-row'>
                 <p className='w-full md:w-auto'>
                   <span></span>
-                  {dataMisiKami[0]['1']}
+                  {t(dataMisiKami[0]['1'])}
                 </p>
                 <p className='w-full md:w-auto'>
                   <span></span>
-                  {dataMisiKami[0]['2']}
+                  {t(dataMisiKami[0]['2'])}
                 </p>
                 <p className='w-full md:w-auto'>
                   <span></span>
-                  {dataMisiKami[0]['3']}
+                  {t(dataMisiKami[0]['3'])}
                 </p>
               </div>
               <div className='misikami flex flex-col items-center justify-between gap-8 md:flex-row md:px-10'>
                 <p className='w-full md:w-auto'>
                   <span></span>
-                  {dataMisiKami[0]['4']}
+                  {t(dataMisiKami[0]['4'])}
                 </p>
                 <p className='w-full md:w-auto'>
                   <span></span>
-                  {dataMisiKami[0]['6']}
+                  {t(dataMisiKami[0]['6'])}
                 </p>
               </div>
               <div className='misikami flex flex-col items-center justify-between gap-8 md:flex-row'>
                 <p className='w-full md:w-auto'>
                   <span></span>
-                  {dataMisiKami[0]['5']}
+                  {t(dataMisiKami[0]['5'])}
                 </p>
                 <p className='w-full md:w-auto'>
                   <span></span>
-                  {dataMisiKami[0]['7']}
+                  {t(dataMisiKami[0]['7'])}
                 </p>
               </div>
             </div>
@@ -300,7 +300,7 @@ export default function TentangKami() {
 
           <div className='py-20'>
             <h1 className='text-left text-3xl font-bold capitalize lg:text-center'>
-              perjalanan kami
+              {t('PerjalananKami')}
             </h1>
             <div className='mt-10 grid grid-cols-1 gap-6 px-4 text-lg md:mt-16 md:grid-cols-2 md:px-6 md:text-xl lg:grid-cols-4'>
               {dataPerjalananKami?.map((item: any, i: any) => (
@@ -318,7 +318,7 @@ export default function TentangKami() {
       </section>
       <section className='bg-tertiary' id='direktur' ref={direkturRef}>
         <div className='container py-20'>
-          <h1 className='text-center text-3xl font-bold'>Direktur</h1>
+          <h1 className='text-center text-3xl font-bold'>{t('Direktur')}</h1>
           <div className='mt-16 grid grid-cols-1 gap-8 px-4 md:grid-cols-2 lg:grid-cols-4'>
             {dataDirektur.map((item: any, i: any) => (
               <div className='flex flex-col gap-y-3' key={i}>
@@ -332,7 +332,7 @@ export default function TentangKami() {
       </section>
       <section className='bg-tertiary' id='tenagaAhli' ref={tenagaAhliRef}>
         <div className='container py-20'>
-          <h1 className='text-center text-3xl font-bold'>Tenaga Ahli</h1>
+          <h1 className='text-center text-3xl font-bold'>{t('TenagaAhli')}</h1>
           <div className='mt-16 grid grid-cols-1 gap-8 px-4 md:grid-cols-2 lg:grid-cols-4'>
             {dataTenagaAhli.map((item: any, i: any) => (
               <div className='flex flex-col gap-y-3' key={i}>
@@ -350,7 +350,7 @@ export default function TentangKami() {
         className='bg-[#121212]'
       >
         <div className='py-14 text-white'>
-          <h1 className='text-center text-3xl font-bold'>Penghargaan</h1>
+          <h1 className='text-center text-3xl font-bold'>{t('Penghargaan')}</h1>
           <div className='py-6'>
             <Carousel
               additionalTransfrom={0}
@@ -421,7 +421,7 @@ export default function TentangKami() {
           </div>
         </div>
         <div className='pb-14 text-white'>
-          <h1 className='text-center text-3xl font-bold'>Publikasi</h1>
+          <h1 className='text-center text-3xl font-bold'>{t('Publikasi')}</h1>
           <div className='py-6'>
             <Carousel
               additionalTransfrom={0}

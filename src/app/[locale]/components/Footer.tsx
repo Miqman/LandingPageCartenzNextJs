@@ -38,14 +38,12 @@ export function Footer() {
           <div className='col mb-5'>
             <img src='/image/logo-footer-cartenz.svg' alt='' />
             <p className='mb-4 mt-8 text-sm font-normal'>
-              Millennium Centennial Center, Lantai 51 Jl. Jenderal Sudirman
-              No.Kav. 25, Kuningan, Karet, Kecamatan Setiabudi, Kota Jakarta
-              Selatan, Daerah Khusus Ibukota Jakarta, 12920
+              {t('CartenzLocation')}
             </p>
           </div>
 
           <div className='col mx-auto mb-10'>
-            <h6 className='text-blue-gray-900 text-xl'>Ikuti Kami</h6>
+            <h6 className='text-blue-gray-900 text-xl'>{t('IkutiKami')}</h6>
             <div className='my-4 flex gap-4'>
               <a
                 href='https://github.com/yahyaparvar/nextjs-template'
