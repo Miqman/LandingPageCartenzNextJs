@@ -5,6 +5,8 @@ import Link from 'next/link'
 import Button from '../components/Button'
 import * as React from 'react'
 import moment from 'moment'
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 
 interface ContentData {
   image: string
@@ -204,26 +206,43 @@ export default function Informasi() {
                 </li>
               ))}
             </ul>
-            <div className='text-medium w-full'>
-              {data.length > 0 && (
+            {isLoading && (
+              <div className='text-medium w-full'>
                 <div className='grid grid-cols-1 gap-6 md:grid-cols-3'>
-                  {data.map((item, i) => (
+                  {[...new Array(6)].map((_, i) => (
                     <div className='flex flex-col gap-y-5' key={i}>
-                      <img
-                        src={item.image}
-                        alt={item.title}
-                        className='h-[405px] object-cover'
-                      />
-                      <p className='font-light'>{item.title}</p>
-                      <p className='font-xl'>{item.description}</p>
+                      <Skeleton width={380} height={300} />
+                      <p className='font-light'>
+                        <Skeleton count={1} />
+                      </p>
+                      <p className='font-xl'>
+                        <Skeleton count={3} />
+                      </p>
                     </div>
                   ))}
                 </div>
-              )}
-            </div>
+              </div>
+            )}
+            {!isLoading && (
+              <div className='text-medium w-full'>
+                {data.length > 0 && (
+                  <div className='grid grid-cols-1 gap-6 md:grid-cols-3'>
+                    {data.map((item, i) => (
+                      <div className='flex flex-col gap-y-5' key={i}>
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          className='h-[405px] object-cover'
+                        />
+                        <p className='font-light'>{item.title}</p>
+                        <p className='font-xl'>{item.description}</p>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
           </div>
-
-          {isLoading && <p>Loading...</p>}
 
           <div className='mt-20 flex justify-center'>
             {/* Tombol akan hilang jika semua data sudah ditampilkan */}
