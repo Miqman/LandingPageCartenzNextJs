@@ -42,18 +42,19 @@ export default function Karir() {
 
   return (
     <div>
-      <div className='h-[100px] w-full'></div>
-      <section className="relative h-[282px] w-full bg-[url('/image/karirHeader.png')] bg-cover bg-no-repeat">
+      {/* <div className='h-[100px] w-full'></div> */}
+      <section className="relative h-[308px] w-full bg-[url('/image/karirHeader.png')] bg-cover bg-no-repeat">
         <div className='absolute inset-0 h-full w-full bg-black/70' />
-        <div className='container relative z-10 mx-auto my-auto flex h-full flex-col justify-center gap-10  text-white'>
-          <h1 className='text-[64px] font-bold'>Karir</h1>
-          <p className='text-xl'>
-            Yuk bergabung bersama kami untuk Pemerintahan Indonesia lebih baik
-          </p>
+        {/* <div className='h-[100px] w-full'></div> */}
+        <div className='container relative z-10 mx-auto my-auto flex h-full flex-col justify-center gap-10 text-white'>
+          <h1 className='mt-28 text-[64px] font-bold'>Karir</h1>
         </div>
       </section>
 
       <section className='container mx-auto'>
+        <p className='mb-20 mt-10 text-2xl'>
+          Yuk bergabung bersama kami untuk Pemerintahan Indonesia lebih baik
+        </p>
         <div className='mt-10 flex flex-wrap items-center gap-10'>
           <div className='flex-[1_1_60%]'>
             <div className='relative'>

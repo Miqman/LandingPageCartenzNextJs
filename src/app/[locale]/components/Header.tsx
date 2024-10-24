@@ -37,18 +37,26 @@ function NavItem({
 }: NavItemProps) {
   const pathname = usePathname()
   const isHomePage = pathname === '/' + locale
+  const isSpecialPage = [
+    `/${locale}/karir`,
+    `/${locale}/hubungan-investor`,
+    `/${locale}/hubungi-kami`,
+    `/${locale}/informasi`
+  ].includes(pathname)
 
-  const borderColor = isHomePage
-    ? isScrolling
-      ? 'border-yellow-500'
-      : 'border-[#0199cb]'
-    : 'border-yellow-500'
+  const borderColor =
+    isSpecialPage || isHomePage
+      ? isScrolling
+        ? 'border-yellow-500'
+        : 'border-[#0199cb]'
+      : 'border-yellow-500'
 
-  const hoverBorderColor = isHomePage
-    ? isScrolling
-      ? 'hover:border-yellow-500'
-      : 'hover:border-[#0199cb]'
-    : 'hover:border-yellow-500'
+  const hoverBorderColor =
+    isSpecialPage || isHomePage
+      ? isScrolling
+        ? 'hover:border-yellow-500'
+        : 'hover:border-[#0199cb]'
+      : 'hover:border-yellow-500'
   return (
     <li>
       <Link
@@ -70,8 +78,17 @@ export const Header: FC<Props> = ({ locale }) => {
   const t = useTranslations('')
 
   const isHomePage = pathname === '/' + locale
+  const isSpecialPage = [
+    `/${locale}/karir`,
+    `/${locale}/hubungan-investor`,
+    `/${locale}/hubungi-kami`,
+    `/${locale}/informasi`
+  ].includes(pathname)
 
-  // console.log(pathname, 'pathname')
+  console.log(
+    [`/${locale}/karir`, `/${locale}/hubungan-investor`].includes(pathname),
+    'pathname'
+  )
 
   const handleOpen = () => setOpen(cur => !cur)
   useEffect(() => {
@@ -99,7 +116,7 @@ export const Header: FC<Props> = ({ locale }) => {
   }, [])
   return (
     <div
-      className={`fixed top-0 z-50 mx-auto w-full border-0 md:h-[100px] ${isHomePage && isScrolling ? 'bg-secondary' : isHomePage ? 'bg-black bg-opacity-25' : 'bg-secondary'}`}
+      className={`fixed top-0 z-50 mx-auto w-full border-0 md:h-[100px] ${(isSpecialPage || isHomePage) && isScrolling ? 'bg-secondary' : isHomePage ? 'bg-black bg-opacity-25' : isSpecialPage ? 'bg-transparent' : 'bg-secondary'}`}
     >
       <div className='container mx-auto h-full items-center gap-6 py-5 text-white md:flex md:justify-between'>
         <div className='flex w-full items-center justify-between md:w-auto'>
@@ -108,13 +125,13 @@ export const Header: FC<Props> = ({ locale }) => {
             href='/'
             className='flex flex-1 items-center px-2 py-3 text-white'
           >
-            {isHomePage && isScrolling ? (
+            {(isSpecialPage || isHomePage) && isScrolling ? (
               <img
                 src='/image/logo_cartenz_white.png'
                 style={{ width: '150px', height: 'auto' }}
                 alt='logoCartenz'
               />
-            ) : isHomePage ? (
+            ) : isSpecialPage || isHomePage ? (
               <img
                 src='/image/logo_cartenz.png'
                 style={{ width: '150px', height: 'auto' }}

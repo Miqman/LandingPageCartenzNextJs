@@ -87,7 +87,13 @@ export default function Informasi() {
     setItemsToShow(prevItems => prevItems + 6) // tambahkan jumlah data yang akan diambil
   }
   return (
-    <div className='mt-[100px]'>
+    <div className=''>
+      <section className="relative h-[308px] w-full bg-[url('/image/karirHeader.png')] bg-cover bg-no-repeat">
+        <div className='absolute inset-0 h-full w-full bg-black/70' />
+        <div className='container relative z-10 mx-auto my-auto flex h-full flex-col justify-center gap-10 text-white'>
+          <h1 className='mt-28 text-[64px] font-bold'>Informasi</h1>
+        </div>
+      </section>
       <section className='container py-8'>
         <h1 className='mb-10 text-3xl font-bold'>Sosial Media</h1>
         <div className='flex flex-wrap items-center justify-center gap-6 text-[24px] md:justify-between'>

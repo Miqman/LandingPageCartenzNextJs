@@ -12,11 +12,13 @@ export default function HubungiKami() {
   }
   return (
     <div>
-      <div className='h-[100px] w-full'></div>
-      <section className="relative h-[282px] w-full bg-[url('/image/imageContactUs.png')] bg-cover bg-no-repeat">
+      {/* <div className='h-[100px] w-full'></div> */}
+      <section className="relative h-[308px] w-full bg-[url('/image/imageContactUs.png')] bg-cover bg-no-repeat">
         <div className='absolute inset-0 h-full w-full bg-black/70' />
         <div className='container relative z-10 mx-auto my-auto flex h-full flex-col justify-center text-white'>
-          <h1 className='text-4xl font-bold md:text-[64px]'>Hubungi Kami</h1>
+          <h1 className='mt-28 text-4xl font-bold md:text-[64px]'>
+            Hubungi Kami
+          </h1>
         </div>
       </section>
 
