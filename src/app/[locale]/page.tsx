@@ -8,18 +8,10 @@ export default function DashboardPage() {
   const t = useTranslations('')
   return (
     <div>
-      <section>
-        <Hero />
-      </section>
-      <section>
-        <Highlight />
-      </section>
-      <section>
-        <Highlight2 />
-      </section>
-      <section>
-        <KisahSukses />
-      </section>
+      <Hero />
+      <Highlight />
+      <Highlight2 />
+      <KisahSukses />
     </div>
   )
 }

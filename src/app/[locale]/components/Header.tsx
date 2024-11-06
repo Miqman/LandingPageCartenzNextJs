@@ -75,6 +75,7 @@ function NavItem({
 }
 export const Header: FC<Props> = ({ locale }) => {
   const [open, setOpen] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
   const [isScrolling, setIsScrolling] = useState(false)
   const pathname = usePathname()
   const t = useTranslations('')
@@ -87,16 +88,16 @@ export const Header: FC<Props> = ({ locale }) => {
     `/${locale}/informasi`
   ].includes(pathname)
 
-  console.log(
-    [`/${locale}/karir`, `/${locale}/hubungan-investor`].includes(pathname),
-    'pathname'
-  )
+  // console.log(
+  //   [`/${locale}/karir`, `/${locale}/hubungan-investor`].includes(pathname),
+  //   'pathname'
+  // )
 
   const handleOpen = () => setOpen(cur => !cur)
   useEffect(() => {
     window.addEventListener(
       'resize',
-      () => window.innerWidth >= 960 && setOpen(false)
+      () => window.innerWidth >= 768 && setOpen(false)
     )
   }, [])
 
@@ -115,6 +116,21 @@ export const Header: FC<Props> = ({ locale }) => {
     window.addEventListener('scroll', handleScroll)
 
     return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+  useEffect(() => {
+    // Cek ukuran jendela ketika komponen pertama kali dipasang
+    const checkWindowSize = () => {
+      setIsMobile(window.innerWidth < 768) // Tentukan ukuran mobile di sini
+    }
+
+    // Menambahkan event listener untuk resize jendela
+    checkWindowSize() // cek sekali di awal
+    window.addEventListener('resize', checkWindowSize)
+
+    // Bersihkan event listener ketika komponen di-unmount
+    return () => {
+      window.removeEventListener('resize', checkWindowSize)
+    }
   }, [])
   return (
     <div
@@ -171,7 +187,7 @@ export const Header: FC<Props> = ({ locale }) => {
           </div>
         </div>
 
-        {(open || window.innerWidth >= 768) && (
+        {(open || !isMobile) && (
           <div className='md:flex'>
             <ul
               className={`flex flex-col items-center justify-start gap-6 transition-all duration-100 ease-in-out md:flex-row md:gap-6 md:space-x-1 md:pb-0 ${

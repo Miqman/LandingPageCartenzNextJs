@@ -49,14 +49,14 @@ export function KisahSukses() {
             tablet: {
               breakpoint: {
                 max: 1024,
-                min: 768
+                min: 640
               },
               items: 1,
               partialVisibilityGutter: 300
             },
             mobile: {
               breakpoint: {
-                max: 464,
+                max: 640,
                 min: 0
               },
               items: 1,
