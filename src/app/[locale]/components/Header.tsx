@@ -23,6 +23,7 @@ interface NavItemProps {
     | '/hubungan-investor'
   isActive: boolean
   isScrolling: boolean
+  isOpen: boolean
   locale?: string
   onClick?: () => void
 }
@@ -32,6 +33,7 @@ function NavItem({
   href,
   isActive,
   isScrolling,
+  isOpen,
   locale,
   onClick
 }: NavItemProps) {
@@ -46,14 +48,14 @@ function NavItem({
 
   const borderColor =
     isSpecialPage || isHomePage
-      ? isScrolling
+      ? isScrolling || isOpen
         ? 'border-yellow-500'
         : 'border-[#0199cb]'
       : 'border-yellow-500'
 
   const hoverBorderColor =
     isSpecialPage || isHomePage
-      ? isScrolling
+      ? isScrolling || isOpen
         ? 'hover:border-yellow-500'
         : 'hover:border-[#0199cb]'
       : 'hover:border-yellow-500'
@@ -116,7 +118,7 @@ export const Header: FC<Props> = ({ locale }) => {
   }, [])
   return (
     <div
-      className={`fixed top-0 z-50 mx-auto w-full border-0 md:h-[100px] ${(isSpecialPage || isHomePage) && isScrolling ? 'bg-secondary' : isHomePage ? 'bg-black bg-opacity-25' : isSpecialPage ? 'bg-transparent' : 'bg-secondary'}`}
+      className={`fixed top-0 z-50 mx-auto w-full border-0 md:h-[100px] ${(isSpecialPage || isHomePage) && (isScrolling || open) ? 'bg-secondary' : isHomePage ? 'bg-black bg-opacity-25' : isSpecialPage ? 'bg-transparent' : 'bg-secondary'}`}
     >
       <div className='container mx-auto h-full items-center gap-6 py-5 text-white md:flex md:justify-between'>
         <div className='flex w-full items-center justify-between md:w-auto'>
@@ -125,7 +127,7 @@ export const Header: FC<Props> = ({ locale }) => {
             href='/'
             className='flex flex-1 items-center px-2 py-3 text-white'
           >
-            {(isSpecialPage || isHomePage) && isScrolling ? (
+            {(isSpecialPage || isHomePage) && (isScrolling || open) ? (
               <img
                 src='/image/logo_cartenz_white.png'
                 style={{ width: '150px', height: 'auto' }}
@@ -169,84 +171,93 @@ export const Header: FC<Props> = ({ locale }) => {
           </div>
         </div>
 
-        <div className=''>
-          <ul
-            className={`flex flex-col items-center justify-start gap-6 transition-all duration-100 ease-in-out md:flex-row md:gap-6 md:space-x-1 md:pb-0 ${
-              open
-                ? 'max-h-[500px] scale-100 opacity-100'
-                : 'max-h-0 scale-95 opacity-0'
-            } md:max-h-full md:scale-100 md:opacity-100`}
-          >
-            <NavItem
-              href='/'
-              isActive={pathname === `/${locale}`}
-              isScrolling={isScrolling}
-              locale={locale}
-              onClick={handleOpen}
+        {(open || window.innerWidth >= 768) && (
+          <div className='md:flex'>
+            <ul
+              className={`flex flex-col items-center justify-start gap-6 transition-all duration-100 ease-in-out md:flex-row md:gap-6 md:space-x-1 md:pb-0 ${
+                open
+                  ? 'max-h-[500px] scale-100 opacity-100'
+                  : 'max-h-0 scale-95 opacity-0'
+              } md:max-h-full md:scale-100 md:opacity-100`}
             >
-              Beranda
-            </NavItem>
-            <NavItem
-              href='/tentang-kami'
-              isActive={pathname === `/${locale}/tentang-kami`}
-              isScrolling={isScrolling}
-              locale={locale}
-              onClick={handleOpen}
-            >
-              Tentang Kami
-            </NavItem>
-            <NavItem
-              href='/produk'
-              isActive={isActivePage('/produk')}
-              isScrolling={isScrolling}
-              locale={locale}
-              onClick={handleOpen}
-            >
-              Produk
-            </NavItem>
-            <NavItem
-              href='/hubungan-investor'
-              isActive={pathname === `/${locale}/hubungan-investor`}
-              isScrolling={isScrolling}
-              locale={locale}
-              onClick={handleOpen}
-            >
-              Hubungan Investor
-            </NavItem>
-            <NavItem
-              href='/informasi'
-              isActive={pathname === `/${locale}/informasi`}
-              isScrolling={isScrolling}
-              locale={locale}
-              onClick={handleOpen}
-            >
-              Informasi
-            </NavItem>
-            <NavItem
-              href='/karir'
-              isActive={pathname === `/${locale}/karir`}
-              isScrolling={isScrolling}
-              locale={locale}
-              onClick={handleOpen}
-            >
-              Karir
-            </NavItem>
-            <NavItem
-              href='/hubungi-kami'
-              isActive={pathname === `/${locale}/hubungi-kami`}
-              isScrolling={isScrolling}
-              locale={locale}
-              onClick={handleOpen}
-            >
-              Hubungi Kami
-            </NavItem>
+              <NavItem
+                href='/'
+                isActive={pathname === `/${locale}`}
+                isScrolling={isScrolling}
+                isOpen={open}
+                locale={locale}
+                onClick={handleOpen}
+              >
+                Beranda
+              </NavItem>
+              <NavItem
+                href='/tentang-kami'
+                isActive={pathname === `/${locale}/tentang-kami`}
+                isScrolling={isScrolling}
+                isOpen={open}
+                locale={locale}
+                onClick={handleOpen}
+              >
+                Tentang Kami
+              </NavItem>
+              <NavItem
+                href='/produk'
+                isActive={isActivePage('/produk')}
+                isScrolling={isScrolling}
+                isOpen={open}
+                locale={locale}
+                onClick={handleOpen}
+              >
+                Produk
+              </NavItem>
+              <NavItem
+                href='/hubungan-investor'
+                isActive={pathname === `/${locale}/hubungan-investor`}
+                isScrolling={isScrolling}
+                isOpen={open}
+                locale={locale}
+                onClick={handleOpen}
+              >
+                Hubungan Investor
+              </NavItem>
+              <NavItem
+                href='/informasi'
+                isActive={pathname === `/${locale}/informasi`}
+                isScrolling={isScrolling}
+                isOpen={open}
+                locale={locale}
+                onClick={handleOpen}
+              >
+                Informasi
+              </NavItem>
+              <NavItem
+                href='/karir'
+                isActive={pathname === `/${locale}/karir`}
+                isScrolling={isScrolling}
+                isOpen={open}
+                locale={locale}
+                onClick={handleOpen}
+              >
+                Karir
+              </NavItem>
+              <NavItem
+                href='/hubungi-kami'
+                isActive={pathname === `/${locale}/hubungi-kami`}
+                isScrolling={isScrolling}
+                isOpen={open}
+                locale={locale}
+                onClick={handleOpen}
+              >
+                Hubungi Kami
+              </NavItem>
 
-            <div className='flex items-center'>
-              <LangSwitcher />
-              <ThemeSwitch />
-            </div>
-          </ul>
-        </div>
+              <div className='flex items-center'>
+                <LangSwitcher />
+                <ThemeSwitch />
+              </div>
+            </ul>
+          </div>
+        )}
         {/* <div className='hidden items-center gap-3 md:flex'> */}
         {/* <nav className='mr-10 inline-flex gap-5'>
           <Link lang={locale} href={`/about`}>

@@ -135,7 +135,7 @@ export function Highlight2() {
         </div>
 
         {/* Bintang Besar */}
-        <div className='absolute right-[-160px] top-[50px]'>
+        <div className='absolute right-[-160px] top-[50px] hidden lg:block'>
           <div className='relative'>
             <img
               src='/image/bintang.png'
