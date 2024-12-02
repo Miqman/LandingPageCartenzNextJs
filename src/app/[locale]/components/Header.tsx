@@ -7,6 +7,7 @@ import ThemeSwitch from './ThemeSwitch'
 import { usePathname } from 'next/navigation'
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
+import { CgClose } from 'react-icons/cg'
 
 interface Props {
   locale: string
@@ -76,6 +77,7 @@ function NavItem({
 export const Header: FC<Props> = ({ locale }) => {
   const [open, setOpen] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
+  const [showMenu, setShowMenu] = useState(false)
   const [isScrolling, setIsScrolling] = useState(false)
   const pathname = usePathname()
   const t = useTranslations('')
@@ -163,28 +165,39 @@ export const Header: FC<Props> = ({ locale }) => {
               />
             )}
           </Link>
+
           {/* Mobile Menu Button */}
-          <div className='flex items-center md:hidden'>
-            <button className='mobile-menu-button' onClick={handleOpen}>
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                width='24'
-                height='24'
-                viewBox='0 0 24 24'
-              >
-                <title>bars-3-bottom-left</title>
-                <g fill='none'>
-                  <path
-                    d='M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12'
-                    stroke='currentColor'
-                    strokeWidth='1.5'
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                  ></path>
-                </g>
-              </svg>
+          {open ? (
+            <button
+              className='text-dark h-8 w-8 text-3xl md:hidden'
+              onClick={handleOpen}
+            >
+              <CgClose />
             </button>
-          </div>
+          ) : (
+            <div className='md:hidden'>
+              <button className='mobile-menu-button' onClick={handleOpen}>
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  width='24'
+                  height='24'
+                  viewBox='0 0 24 24'
+                >
+                  <title>bars-3-bottom-left</title>
+                  <g fill='none'>
+                    <path
+                      d='M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12'
+                      stroke='currentColor'
+                      strokeWidth='1.5'
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                    ></path>
+                  </g>
+                </svg>
+              </button>
+            </div>
+          )}
+          {/* Mobile Menu Button */}
         </div>
 
         {(open || !isMobile) && (

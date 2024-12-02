@@ -6,7 +6,7 @@ import {
   NextIntlClientProvider,
   useMessages
 } from 'next-intl'
-import { Roboto, Montserrat, Poppins } from 'next/font/google'
+import { Inter, Roboto, Montserrat, Poppins } from 'next/font/google'
 import NextTopLoader from 'nextjs-toploader'
 import { Header } from './components/Header'
 import './globals.css'
@@ -32,6 +32,12 @@ const poppins = Poppins({
   variable: '--font-poppins'
 })
 
+export const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter'
+})
+
 export const metadata: Metadata = {
   title: 'Landing Page Cartenz',
   description: 'Landing Page by Cartenz',
@@ -52,21 +58,13 @@ export default function RootLayout({
     <html
       lang={locale}
       dir={locale === 'ar' || locale == 'fa' ? 'rtl' : 'ltr'}
-      className={`${roboto.variable} ${montserrat.variable} ${poppins.variable} scroll-smooth`}
+      className={`${roboto.variable} ${inter.variable} ${poppins.variable} scroll-smooth`}
       suppressHydrationWarning={true}
     >
       {/* <Head>
         <link rel='icon' href='/image/favicon.ico' />
       </Head> */}
-      <body
-        style={{
-          backgroundImage: "url('/image/terxtureBg.png')",
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'center',
-          minHeight: '100vh'
-        }}
-      >
+      <body>
         <ThemeProvider
           enableSystem
           attribute='class'

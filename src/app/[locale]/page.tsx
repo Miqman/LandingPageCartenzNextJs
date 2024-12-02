@@ -9,7 +9,7 @@ export default function DashboardPage() {
   return (
     <div>
       <Hero />
-      <Highlight />
+      {/* <Highlight /> */}
       <Highlight2 />
       <KisahSukses />
     </div>
