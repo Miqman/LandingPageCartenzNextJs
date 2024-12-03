@@ -32,7 +32,7 @@ const CURRENT_YEAR = new Date().getFullYear()
 export function Footer() {
   const t = useTranslations('')
   return (
-    <footer className='px-8 pb-8 pt-24'>
+    <footer className='mt-8 px-8 pb-8'>
       <div className='border-blue-gray-50 container mx-auto flex flex-col border-t'>
         <div className='grid !w-full grid-cols-1 gap-x-10 lg:mt-10 lg:grid-cols-3'>
           <div className='col mb-5'>
