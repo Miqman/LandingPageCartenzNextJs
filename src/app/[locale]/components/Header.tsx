@@ -53,6 +53,12 @@ function NavItem({
         ? 'border-yellow-500'
         : 'border-[#0199cb]'
       : 'border-yellow-500'
+  const bgColor =
+    isSpecialPage || isHomePage
+      ? isScrolling || isOpen
+        ? 'bg-yellow-500'
+        : 'bg-[#0199cb]'
+      : 'bg-yellow-500'
 
   const hoverBorderColor =
     isSpecialPage || isHomePage
@@ -60,16 +66,18 @@ function NavItem({
         ? 'hover:border-yellow-500'
         : 'hover:border-[#0199cb]'
       : 'hover:border-yellow-500'
+
   return (
-    <li>
+    <li className='group relative'>
       <Link
         href={href as any}
         onClick={onClick}
-        className={`cursor-pointer hover:rounded-sm hover:py-2 ${hoverBorderColor} font-medium hover:border-b-4 ${
-          isActive ? `rounded-sm border-b-4 py-2 ${borderColor}` : ''
-        }`}
+        className={`relative pb-2 font-semibold`}
       >
         {children}
+        <span
+          className={`absolute bottom-0 left-0 h-1 w-full rounded-full ${bgColor}  transition-transform duration-300 ease-in-out ${isActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}
+        ></span>
       </Link>
     </li>
   )
@@ -78,7 +86,7 @@ export const Header: FC<Props> = ({ locale }) => {
   const [open, setOpen] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
   const [isScrolling, setIsScrolling] = useState(false)
-  const [isReady, setIsReady] = useState(false)
+  // const [isReady, setIsReady] = useState(false)
   const pathname = usePathname()
 
   const isHomePage = pathname == '/' + locale
@@ -112,7 +120,7 @@ export const Header: FC<Props> = ({ locale }) => {
 
     window.addEventListener('scroll', handleScroll)
 
-    setIsReady(true)
+    // setIsReady(true)
 
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
@@ -139,9 +147,9 @@ export const Header: FC<Props> = ({ locale }) => {
 
   // Tentukan background header
   const backgroundColor = (() => {
-    if (!isReady) {
-      return 'bg-transparent' // Default awal, transparan sebelum semua siap
-    }
+    // if (!isReady) {
+    //   return 'bg-transparent' // Default awal, transparan sebelum semua siap
+    // }
     if (isScrolling || open) {
       return 'bg-secondary'
     } else if (isHomePage) {
@@ -149,15 +157,15 @@ export const Header: FC<Props> = ({ locale }) => {
     } else if (isSpecialPage) {
       return 'bg-transparent'
     } else {
-      return 'bg-white text-black'
+      return 'bg-white !text-black'
     }
   })()
 
   // Pilih logo yang sesuai
   const logoSrc = (() => {
-    if (!isReady) {
-      return '/image/logo_cartenz_white.png' // Default awal
-    }
+    // if (!isReady) {
+    //   return '/image/logo_cartenz_white.png' // Default awal
+    // }
     if (isScrolling || open) {
       return '/image/logo_cartenz_white.png'
     } else if (isSpecialPage || isHomePage) {
@@ -176,7 +184,7 @@ export const Header: FC<Props> = ({ locale }) => {
           <Link
             lang={locale}
             href='/'
-            className='flex flex-1 items-center px-2 py-3 text-white'
+            className='flex flex-1 items-center px-2 py-3'
           >
             <img
               src={logoSrc}
