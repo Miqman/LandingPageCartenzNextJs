@@ -17,7 +17,7 @@ export default function TentangKami() {
     dataPerjalananKami,
     dataDirektur,
     dataTenagaAhli,
-    dataPenghargaan,
+    // dataPenghargaan,
     isLoading,
     isError
   } = useTentangKami()
@@ -26,7 +26,7 @@ export default function TentangKami() {
   const perkenalanRef = useRef(null)
   const direkturRef = useRef(null)
   const tenagaAhliRef = useRef(null)
-  const penghargaanPublikasiRef = useRef(null)
+  // const penghargaanPublikasiRef = useRef(null)
 
   const dataCardPerkenalan = [
     {
@@ -85,9 +85,9 @@ export default function TentangKami() {
     if (tenagaAhliRef.current) {
       observer.observe(tenagaAhliRef.current)
     }
-    if (penghargaanPublikasiRef.current) {
-      observer.observe(penghargaanPublikasiRef.current)
-    }
+    // if (penghargaanPublikasiRef.current) {
+    //   observer.observe(penghargaanPublikasiRef.current)
+    // }
 
     return () => {
       if (perkenalanRef.current) {
@@ -99,9 +99,9 @@ export default function TentangKami() {
       if (tenagaAhliRef.current) {
         observer.unobserve(tenagaAhliRef.current)
       }
-      if (penghargaanPublikasiRef.current) {
-        observer.unobserve(penghargaanPublikasiRef.current)
-      }
+      // if (penghargaanPublikasiRef.current) {
+      //   observer.unobserve(penghargaanPublikasiRef.current)
+      // }
     }
   }, [])
 
@@ -131,77 +131,85 @@ export default function TentangKami() {
   return (
     <div className=''>
       <div className='h-[100px] w-full'></div>
-      <section className='flex h-auto flex-col items-center justify-center space-y-3 bg-tertiary text-[#828282] sm:flex-row sm:space-x-5 sm:space-y-0 lg:h-[100px] lg:space-x-7 lg:text-base'>
-        <div
-          className={`relative text-base font-bold ${activeSection === 'perkenalan' || isHovered === 'perkenalan' ? 'text-[#0199cb]' : 'text-[#828282]'}`}
-          onMouseEnter={() => setIsHovered('perkenalan')}
-          onMouseLeave={() => setIsHovered('')}
-          onClick={() => {
-            const element = document.getElementById('perkenalan')
-            if (element) {
-              element.scrollIntoView({ behavior: 'smooth' })
-            }
-          }}
-        >
-          <p className='cursor-pointer py-2'>{t('Perkenalan')}</p>
-          {(activeSection === 'perkenalan' || isHovered === 'perkenalan') && (
-            <div className='absolute inset-x-0 bottom-0 h-[4px] rounded-b-lg bg-[#0199cb]'></div>
-          )}
-        </div>
-        <div
-          className={`relative text-base font-bold ${activeSection === 'direktur' || isHovered === 'direktur' ? 'text-[#0199cb]' : 'text-[#828282]'}`}
-          onMouseEnter={() => setIsHovered('direktur')}
-          onMouseLeave={() => setIsHovered('')}
-          onClick={() => {
-            const element = document.getElementById('direktur')
-            if (element) {
-              element.scrollIntoView({ behavior: 'smooth' })
-            }
-          }}
-        >
-          <p className='cursor-pointer py-2'>{t('Direktur1')}</p>
-          {(activeSection === 'direktur' || isHovered === 'direktur') && (
-            <div className='absolute inset-x-0 bottom-0 h-[4px] rounded-b-lg bg-[#0199cb]'></div>
-          )}
-        </div>
-        <div
-          className={`relative text-base font-bold ${activeSection === 'tenagaAhli' || isHovered === 'tenagaAhli' ? 'text-[#0199cb]' : 'text-[#828282]'}`}
-          onMouseEnter={() => setIsHovered('tenagaAhli')}
-          onMouseLeave={() => setIsHovered('')}
-          onClick={() => {
-            const element = document.getElementById('tenagaAhli')
-            if (element) {
-              element.scrollIntoView({ behavior: 'smooth' })
-            }
-          }}
-        >
-          <p className='cursor-pointer py-2'>{t('TenagaAhli')}</p>
-          {(activeSection === 'tenagaAhli' || isHovered === 'tenagaAhli') && (
-            <div className='absolute inset-x-0 bottom-0 h-[4px] rounded-b-lg bg-[#0199cb]'></div>
-          )}
-        </div>
-        <div
-          className={`relative text-base font-bold ${activeSection === 'penghargaanPublikasi' || isHovered === 'penghargaanPublikasi' ? 'text-[#0199cb]' : 'text-[#828282]'}`}
-          onMouseEnter={() => setIsHovered('penghargaanPublikasi')}
-          onMouseLeave={() => setIsHovered('')}
-          onClick={() => {
-            const element = document.getElementById('penghargaanPublikasi')
-            if (element) {
-              element.scrollIntoView({ behavior: 'smooth' })
-            }
-          }}
-        >
-          <p className='cursor-pointer py-2'>{t('PenghargaanDanPublikasi')}</p>
-          {(activeSection === 'penghargaanPublikasi' ||
-            isHovered === 'penghargaanPublikasi') && (
-            <div className='absolute inset-x-0 bottom-0 h-[4px] rounded-b-lg bg-[#0199cb]'></div>
-          )}
+      <section className='bg-tertiary'>
+        <div className='container'>
+          <div className='flex h-auto flex-col items-center space-y-3 text-[#828282] sm:flex-row sm:space-x-5 sm:space-y-0 md:h-[100px] md:space-x-7 md:px-16 md:text-base'>
+            <div
+              className={`relative text-base font-bold ${activeSection === 'perkenalan' || isHovered === 'perkenalan' ? 'text-[#0199cb]' : 'text-[#828282]'}`}
+              onMouseEnter={() => setIsHovered('perkenalan')}
+              onMouseLeave={() => setIsHovered('')}
+              onClick={() => {
+                const element = document.getElementById('perkenalan')
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth' })
+                }
+              }}
+            >
+              <p className='cursor-pointer py-2'>{t('Perkenalan')}</p>
+              {(activeSection === 'perkenalan' ||
+                isHovered === 'perkenalan') && (
+                <div className='absolute inset-x-0 bottom-0 h-[4px] rounded-b-lg bg-[#0199cb]'></div>
+              )}
+            </div>
+            <div
+              className={`relative text-base font-bold ${activeSection === 'direktur' || isHovered === 'direktur' ? 'text-[#0199cb]' : 'text-[#828282]'}`}
+              onMouseEnter={() => setIsHovered('direktur')}
+              onMouseLeave={() => setIsHovered('')}
+              onClick={() => {
+                const element = document.getElementById('direktur')
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth' })
+                }
+              }}
+            >
+              <p className='cursor-pointer py-2'>{t('Direktur1')}</p>
+              {(activeSection === 'direktur' || isHovered === 'direktur') && (
+                <div className='absolute inset-x-0 bottom-0 h-[4px] rounded-b-lg bg-[#0199cb]'></div>
+              )}
+            </div>
+            <div
+              className={`relative text-base font-bold ${activeSection === 'tenagaAhli' || isHovered === 'tenagaAhli' ? 'text-[#0199cb]' : 'text-[#828282]'}`}
+              onMouseEnter={() => setIsHovered('tenagaAhli')}
+              onMouseLeave={() => setIsHovered('')}
+              onClick={() => {
+                const element = document.getElementById('tenagaAhli')
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth' })
+                }
+              }}
+            >
+              <p className='cursor-pointer py-2'>{t('TenagaAhli')}</p>
+              {(activeSection === 'tenagaAhli' ||
+                isHovered === 'tenagaAhli') && (
+                <div className='absolute inset-x-0 bottom-0 h-[4px] rounded-b-lg bg-[#0199cb]'></div>
+              )}
+            </div>
+            {/* <div
+              className={`relative text-base font-bold ${activeSection === 'penghargaanPublikasi' || isHovered === 'penghargaanPublikasi' ? 'text-[#0199cb]' : 'text-[#828282]'}`}
+              onMouseEnter={() => setIsHovered('penghargaanPublikasi')}
+              onMouseLeave={() => setIsHovered('')}
+              onClick={() => {
+                const element = document.getElementById('penghargaanPublikasi')
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth' })
+                }
+              }}
+            >
+              <p className='cursor-pointer py-2'>
+                {t('PenghargaanDanPublikasi')}
+              </p>
+              {(activeSection === 'penghargaanPublikasi' ||
+                isHovered === 'penghargaanPublikasi') && (
+                <div className='absolute inset-x-0 bottom-0 h-[4px] rounded-b-lg bg-[#0199cb]'></div>
+              )}
+            </div> */}
+          </div>
         </div>
       </section>
       <section id='perkenalan' ref={perkenalanRef} className='mt-10'>
         <div className='container'>
-          <div className='grid grid-cols-1 overflow-hidden rounded-[40px] bg-tertiary md:grid-cols-2'>
-            <div className='px-8 py-10 md:px-16 md:py-20'>
+          <div className='grid grid-cols-1 overflow-hidden rounded-[40px] px-8 md:grid-cols-2 md:px-16'>
+            <div className=' py-10 pr-8 md:py-20 md:pr-16'>
               <h1 className='text-4xl font-bold md:text-6xl'>
                 {t(dataPerkenalan[0].judul)}
               </h1>
@@ -215,7 +223,7 @@ export default function TentangKami() {
           </div>
         </div>
 
-        <div className='container'>
+        {/* <div className='container'>
           <div className='py-20'>
             <p className='text-center text-3xl font-bold'>{t('BudayaKami')}</p>
             <h1 className='customShadow my-10 text-center font-poppins text-7xl font-bold tracking-widest text-[#0199cb] lg:text-9xl lg:leading-[192px]'>
@@ -236,7 +244,6 @@ export default function TentangKami() {
                       src={item.srcImg}
                       alt='Random image'
                     />
-                    {/* <div className='absolute inset-0 rounded-md bg-gray-700 opacity-60'></div> */}
                     <div className='absolute inset-0 flex items-center justify-center'>
                       <h2 className='text-3xl font-bold uppercase'>
                         {t(item.judul)}
@@ -244,16 +251,16 @@ export default function TentangKami() {
                     </div>
                   </div>
                   <div className='p-4 text-xl'>
-                    <p>{t(item.text)}</p> 
+                    <p>{t(item.text)}</p>
                   </div>
                 </div>
               ))}
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div className='container relative'>
-          <div className='py-20'>
+          {/* <div className='py-20'>
             <h1 className='text-left text-3xl font-bold uppercase lg:text-center'>
               {t('MisiKami')}
             </h1>
@@ -293,12 +300,9 @@ export default function TentangKami() {
                 </p>
               </div>
             </div>
-          </div>
+          </div> */}
 
-          <span className='absolute h-[2px] w-full bg-secondary'></span>
-          <span className='absolute right-8 top-32 hidden h-[600px] w-[2px] bg-secondary md:block'></span>
-
-          <div className='py-20'>
+          <div className='py-20 md:px-8'>
             <h1 className='text-left text-3xl font-bold capitalize lg:text-center'>
               {t('PerjalananKami')}
             </h1>
@@ -314,10 +318,13 @@ export default function TentangKami() {
               ))}
             </div>
           </div>
+
+          <span className='absolute h-[2px] w-full bg-secondary'></span>
+          <span className='absolute right-8 top-32 hidden h-[600px] w-[2px] bg-secondary md:block'></span>
         </div>
       </section>
-      <section className='bg-tertiary' id='direktur' ref={direkturRef}>
-        <div className='container py-20'>
+      <section className='container' id='direktur' ref={direkturRef}>
+        <div className='px-8 py-20'>
           <h1 className='text-center text-3xl font-bold'>{t('Direktur')}</h1>
           <div className='mt-16 grid grid-cols-1 gap-8 px-4 md:grid-cols-2 lg:grid-cols-4'>
             {dataDirektur.map((item: any, i: any) => (
@@ -330,8 +337,8 @@ export default function TentangKami() {
           </div>
         </div>
       </section>
-      <section className='bg-tertiary' id='tenagaAhli' ref={tenagaAhliRef}>
-        <div className='container py-20'>
+      <section className='container' id='tenagaAhli' ref={tenagaAhliRef}>
+        <div className='py-20 md:px-8'>
           <h1 className='text-center text-3xl font-bold'>{t('TenagaAhli')}</h1>
           <div className='mt-16 grid grid-cols-1 gap-8 px-4 md:grid-cols-2 lg:grid-cols-4'>
             {dataTenagaAhli.map((item: any, i: any) => (
@@ -344,7 +351,7 @@ export default function TentangKami() {
           </div>
         </div>
       </section>
-      <section
+      {/* <section
         id='penghargaanPublikasi'
         ref={penghargaanPublikasiRef}
         className='bg-[#121212]'
@@ -491,7 +498,7 @@ export default function TentangKami() {
             </Carousel>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   )
 }

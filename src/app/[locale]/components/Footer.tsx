@@ -32,8 +32,9 @@ const CURRENT_YEAR = new Date().getFullYear()
 export function Footer() {
   const t = useTranslations('')
   return (
-    <footer className='mt-8 px-8 pb-8'>
-      <div className='border-blue-gray-50 container mx-auto flex flex-col border-t'>
+    <footer className='mt-8 px-8 pb-8 md:px-16'>
+      <hr className='bg-blue-gray-50 container' />
+      <div className='container mx-auto flex flex-col'>
         <div className='grid !w-full grid-cols-1 gap-x-10 lg:mt-10 lg:grid-cols-3'>
           <div className='col mb-5'>
             <img src='/image/logo-footer-cartenz.svg' alt='' />

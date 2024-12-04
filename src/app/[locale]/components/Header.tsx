@@ -77,29 +77,24 @@ function NavItem({
 export const Header: FC<Props> = ({ locale }) => {
   const [open, setOpen] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
-  const [showMenu, setShowMenu] = useState(false)
   const [isScrolling, setIsScrolling] = useState(false)
+  const [isReady, setIsReady] = useState(false)
   const pathname = usePathname()
-  const t = useTranslations('')
 
-  const isHomePage = pathname === '/' + locale
-  const isSpecialPage = [
+  const isHomePage = pathname == '/' + locale
+
+  let isSpecialPage = [
     `/${locale}/karir`,
     `/${locale}/hubungan-investor`,
     `/${locale}/hubungi-kami`,
     `/${locale}/informasi`
   ].includes(pathname)
 
-  // console.log(
-  //   [`/${locale}/karir`, `/${locale}/hubungan-investor`].includes(pathname),
-  //   'pathname'
-  // )
-
   const handleOpen = () => setOpen(cur => !cur)
   useEffect(() => {
     window.addEventListener(
       'resize',
-      () => window.innerWidth >= 768 && setOpen(false)
+      () => window.innerWidth > 768 && setOpen(false)
     )
   }, [])
 
@@ -116,6 +111,8 @@ export const Header: FC<Props> = ({ locale }) => {
     }
 
     window.addEventListener('scroll', handleScroll)
+
+    setIsReady(true)
 
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
@@ -134,48 +131,70 @@ export const Header: FC<Props> = ({ locale }) => {
       window.removeEventListener('resize', checkWindowSize)
     }
   }, [])
+
+  useEffect(() => {
+    setOpen(false)
+    // isSpecialPage = false
+  }, [pathname])
+
+  // Tentukan background header
+  const backgroundColor = (() => {
+    if (!isReady) {
+      return 'bg-transparent' // Default awal, transparan sebelum semua siap
+    }
+    if (isScrolling || open) {
+      return 'bg-secondary'
+    } else if (isHomePage) {
+      return 'bg-black bg-opacity-25'
+    } else if (isSpecialPage) {
+      return 'bg-transparent'
+    } else {
+      return 'bg-white text-black'
+    }
+  })()
+
+  // Pilih logo yang sesuai
+  const logoSrc = (() => {
+    if (!isReady) {
+      return '/image/logo_cartenz_white.png' // Default awal
+    }
+    if (isScrolling || open) {
+      return '/image/logo_cartenz_white.png'
+    } else if (isSpecialPage || isHomePage) {
+      return '/image/logo_cartenz.png'
+    } else {
+      return '/image/logo_cartenz_black.png'
+    }
+  })()
+
   return (
     <div
-      className={`fixed top-0 z-50 mx-auto w-full border-0 md:h-[100px] ${(isSpecialPage || isHomePage) && (isScrolling || open) ? 'bg-secondary' : isHomePage ? 'bg-black bg-opacity-25' : isSpecialPage ? 'bg-transparent' : 'bg-secondary'}`}
+      className={`fixed top-0 z-50 mx-auto w-full border-0 text-white md:h-[100px] ${backgroundColor}`}
     >
-      <div className='container mx-auto h-full items-center gap-6 py-5 text-white md:flex md:justify-between'>
+      <div className='container mx-auto h-full items-center gap-6 py-5 md:flex md:justify-between'>
         <div className='flex w-full items-center justify-between md:w-auto'>
           <Link
             lang={locale}
             href='/'
             className='flex flex-1 items-center px-2 py-3 text-white'
           >
-            {(isSpecialPage || isHomePage) && (isScrolling || open) ? (
-              <img
-                src='/image/logo_cartenz_white.png'
-                style={{ width: '150px', height: 'auto' }}
-                alt='logoCartenz'
-              />
-            ) : isSpecialPage || isHomePage ? (
-              <img
-                src='/image/logo_cartenz.png'
-                style={{ width: '150px', height: 'auto' }}
-                alt='logoCartenz'
-              />
-            ) : (
-              <img
-                src='/image/logo_cartenz_white.png'
-                style={{ width: '150px', height: 'auto' }}
-                alt='logoCartenz'
-              />
-            )}
+            <img
+              src={logoSrc}
+              style={{ width: '150px', height: 'auto' }}
+              alt='logoCartenz'
+            />
           </Link>
 
           {/* Mobile Menu Button */}
           {open ? (
             <button
-              className='text-dark h-8 w-8 text-3xl md:hidden'
+              className='text-dark mr-2 h-8 w-8 text-3xl md:hidden'
               onClick={handleOpen}
             >
               <CgClose />
             </button>
           ) : (
-            <div className='md:hidden'>
+            <div className='mr-2 md:hidden'>
               <button className='mobile-menu-button' onClick={handleOpen}>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
